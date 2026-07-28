@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import '../../styles/robotic-welding.css';
+
+const disciplines = [
+  ['Fixture engineering', 'Part location, clamp access, torch clearance, distortion control, and repeatable loading designed into the workholding system.'],
+  ['Robot access', 'Reach, joint posture, gun angle, cable routing, collision risk, and service access evaluated around the real weld sequence.'],
+  ['Production flow', 'Loading, unloading, sequencing, verification, changeover, and operator interaction considered as part of one complete cell.'],
+];
+
+const process = [
+  ['Define', 'Understand the part, weld requirements, volume, quality risks, operator needs, and available equipment.'],
+  ['Fixture', 'Create controlled location, clamping, support, access, and mistake-proofing around the assembly.'],
+  ['Integrate', 'Position the robot, prove reach and torch angles, organize cables, and connect the cell around the fixture.'],
+  ['Prove', 'Run the sequence, inspect results, refine the setup, and prepare the process for repeatable production.'],
+];
+---
+
+<BaseLayout
+  title="Robotic Welding & Fixture Integration | LaserX Design"
+  description="Robotic welding cells, production fixtures, workholding, robot access, weld sequencing, and CAD-to-floor manufacturing integration from LaserX Design."
+  image="/images/projects/robotic-welding/generated/robotic-welding-cleaned-01.png"
+>
+  <SiteHeader />
+  <main class="rw-page">
+    <section class="rw-hero">
+      <img class="rw-hero-image" src="/images/projects/robotic-welding/generated/robotic-welding-cleaned-01.png" alt="Robotic welding cell operating on a multi-station production fixture" width="1536" height="2048" fetchpriority="high" decoding="async" />
+      <span class="rw-hero-shade" aria-hidden="true"></span>
+      <div class="container rw-hero-content">
+        <p class="eyebrow">Robotic welding / production integration</p>
+        <h1>Fixture the work. Prove the path. Build repeatability.</h1>
+        <p class="lede">Robotic welding succeeds when the fixture, part presentation, torch access, weld sequence, controls, and operator workflow are engineered as one production system.</p>
+        <div class="actions"><a class="button button-primary" href="/contact">Discuss a welding cell ↗</a><a class="button button-secondary" href="#proof">See the system</a></div>
+      </div>
+    </section>
+
+    <section class="rw-overview">
+      <div class="container rw-overview-grid">
+        <div>
+          <p class="eyebrow">The real engineering problem</p>
+          <h2>The robot is only one part of the cell.</h2>
+        </div>
+        <div class="rw-overview-copy">
+          <p>A productive robotic weld cell depends on controlled part location, repeatable clamping, clear torch access, reliable sequencing, safe loading, and a layout that can actually be operated and maintained.</p>
+          <p>LaserX Design approaches the fixture and the robot together, carrying the work from manufacturing intent through physical setup, fit-up, testing, and production refinement.</p>
+        </div>
+      </div>
+      <div class="container rw-discipline-grid">
+        {disciplines.map(([title, description], index) => (
+          <article><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section class="rw-proof" id="proof">
+      <div class="container rw-proof-head">
+        <div><p class="eyebrow">Cell and fixture development</p><h2>Built around the work—not around a brochure.</h2></div>
+        <p>The visuals below document the core layers of the system: robotic welding, fixture architecture, workholding, access, and production-minded layout.</p>
+      </div>
+      <div class="container rw-gallery">
+        <figure class="rw-gallery-large"><img src="/images/projects/robotic-welding/generated/robotic-welding-cleaned-02.png" alt="Robotic welding cell and production fixture overview" width="1536" height="2048" loading="lazy" decoding="async" /><figcaption><span>Cell integration</span><strong>Robot placement, fixture access, and weld-path development.</strong></figcaption></figure>
+        <figure><img src="/images/projects/robotic-welding/generated/robotic-welding-cleaned-03.png" alt="Multi-station robotic welding fixture detail" width="1536" height="2048" loading="lazy" decoding="async" /><figcaption><span>Fixture architecture</span><strong>Controlled location and repeatable workholding.</strong></figcaption></figure>
+        <figure><img src="/images/projects/robotic-welding/generated/robotic-welding-cleaned-04.png" alt="Robotic welding torch operating over a production fixture" width="1536" height="2048" loading="lazy" decoding="async" /><figcaption><span>Process proof</span><strong>Torch angle, clearance, sequence, and repeatability.</strong></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="rw-process">
+      <div class="container rw-process-head"><p class="eyebrow">Integration path</p><h2>From part geometry to a working production cell.</h2></div>
+      <div class="container rw-process-grid">
+        {process.map(([title, description], index) => (
+          <article><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>
+        ))}
+      </div>
+    </section>
+
+    <section class="rw-outcome">
+      <div class="container rw-outcome-grid">
+        <div><p class="eyebrow">The target</p><h2>Repeatable parts without disconnected handoffs.</h2></div>
+        <div><p>The goal is not simply to make the robot move. The goal is a production system that locates the assembly, provides weld access, controls variation, supports inspection, and can be loaded, run, serviced, and improved by the people responsible for output.</p><a class="text-link" href="/contact">Bring us the process ↗</a></div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

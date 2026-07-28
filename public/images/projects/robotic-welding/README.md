@@ -1,5 +1,5 @@
-# Robotic welding project images
+# Robotic welding image library
 
-- `generated/` contains cleaned presentation images derived from the robotic welding cell photographs.
-- `originals/` is reserved for untouched source photographs.
-- Final website selections should be promoted to this project folder with descriptive filenames such as `robotic-welding-hero.png`, `fixture-detail.png`, and `cell-overview.png`.
+- `generated/` contains cleaned presentation images used for the current page hero and visual studies.
+- Add verified original shop photographs under `real/` using descriptive filenames.
+- Keep one cleaned image for impact, then use original photographs as proof wherever possible.
