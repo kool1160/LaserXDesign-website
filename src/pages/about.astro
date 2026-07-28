@@ -8,41 +8,17 @@ const capabilities = [
   ['Machine Design & Building', 'Mechanical layout, frame and component design, fabrication, assembly, testing, troubleshooting, and refinement of complete machines.'],
   ['Automation & Controls', 'Machine wiring, sensors, control hardware, cobot integration, Arduino, ESP32, Raspberry Pi, and practical shop-floor automation.'],
   ['Manufacturing Systems', 'Fixtures, poka-yoke concepts, repeatability improvements, routings, workholding, process development, and production-minded design.'],
-  ['Welding & Fabrication', 'Hands-on TIG and MIG welding experience supporting prototypes, precision assemblies, custom equipment, and production work.'],
+  ['Welding & Fabrication', 'Hands-on TIG and MIG welding experience supporting prototypes, precision assemblies, custom equipment, and production work.']
 ];
 ---
-
-<BaseLayout title="About LaserX Design | CAD, CNC Cutting & Machine Building" description="Learn about LaserX Design and its hands-on experience in SolidWorks, AutoCAD, CNC plasma cutting, fabrication, machine wiring, automation, fixtures, and complete machine design.">
+<BaseLayout title="About LaserX Design | CAD, CNC Cutting & Machine Building" description="Learn about LaserX Design and its hands-on experience in SolidWorks, AutoCAD, CNC plasma cutting, fabrication, machine wiring, automation, fixtures, and complete machine design." image="/images/generated/about/design-build-workspace.png">
   <SiteHeader />
   <main class="inner-page">
-    <section class="page-hero">
-      <div class="container page-hero-content">
-        <p class="eyebrow">About LaserX Design</p>
-        <h1>Designed by someone who knows how things are actually built.</h1>
-        <p class="lede">LaserX Design combines CAD, manufacturing, fabrication, automation, machine wiring, and hands-on problem solving to take ideas from an early concept to a working part, fixture, machine, or complete system.</p>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container two-column">
-        <div class="section-title"><p class="eyebrow">The background</p><h2>Design experience rooted in the shop floor.</h2></div>
-        <div class="prose"><p>LaserX Design is built around the experience of Chris Hilton, a product engineer, welder, fabricator, machine builder, and manufacturing problem solver with years of hands-on experience turning designs into real equipment and repeatable processes.</p><p>That experience includes SolidWorks, AutoCAD, Inventor, CNC programming, TIG and MIG welding, cobot programming, sensors, controls, networking, fixture development, production routings, troubleshooting, and the practical details that determine whether a design succeeds once it reaches the floor.</p><p>The focus is not design for appearance alone. Every project is approached with fabrication, assembly, wiring, access, serviceability, repeatability, and real-world use in mind.</p></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-title"><p class="eyebrow">Featured build</p><h2>A complete CNC plasma table, designed and built from the ground up.</h2><p>One of the clearest examples of the LaserX Design approach is a custom CNC plasma cutting table developed as a complete working machine rather than a collection of purchased parts.</p></div>
-        <div class="two-column feature-panel"><div class="prose"><p>The project included the machine frame, gantry, water table, automatic drain and fill system, electrical layout, machine wiring, controls, component integration, CAD work, fabrication, finishing, assembly, testing, and continued software development.</p><p>It demonstrates the full scope of the company: mechanical design, CAD, fabrication, CNC cutting, machine systems, controls, wiring, troubleshooting, and the ability to carry a difficult project through to a functioning result.</p></div><div class="fact-list" aria-label="CNC plasma table project scope"><span>Mechanical design</span><span>SolidWorks and CAD development</span><span>Frame and gantry fabrication</span><span>Water-table system</span><span>Machine wiring and controls</span><span>Assembly, testing, and refinement</span></div></div>
-      </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="container"><div class="section-title"><p class="eyebrow">Capabilities</p><h2>From a single part to a complete automated machine.</h2><p>The company’s scope is intentionally broad because successful manufacturing projects rarely fit neatly into one trade.</p></div><div class="grid">{capabilities.map(([title, description], index) => <article class="card"><span class="card-number">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div>
-    </section>
-
+    <section class="page-hero page-hero-visualized"><img class="page-hero-bg" src="/images/generated/about/design-build-workspace.png" alt="Concept visualization of a design-build industrial engineering workspace" width="1536" height="1024" fetchpriority="high" decoding="async" /><div class="container page-hero-content"><p class="eyebrow">About LaserX Design</p><h1>Designed by someone who knows how things are actually built.</h1><p class="lede">LaserX Design combines CAD, manufacturing, fabrication, automation, machine wiring, and hands-on problem solving to take ideas from an early concept to a working part, fixture, machine, or complete system.</p><p class="concept-badge">Concept visualization · temporary presentation image</p></div></section>
+    <section class="section section-alt"><div class="container two-column"><div class="section-title"><p class="eyebrow">The background</p><h2>Design experience rooted in the shop floor.</h2></div><div class="prose"><p>LaserX Design is built around the experience of Chris Hilton, a product engineer, welder, fabricator, machine builder, and manufacturing problem solver with years of hands-on experience turning designs into real equipment and repeatable processes.</p><p>That experience includes SolidWorks, AutoCAD, Inventor, CNC programming, TIG and MIG welding, cobot programming, sensors, controls, networking, fixture development, production routings, troubleshooting, and the practical details that determine whether a design succeeds once it reaches the floor.</p><p>The focus is not design for appearance alone. Every project is approached with fabrication, assembly, wiring, access, serviceability, repeatability, and real-world use in mind.</p></div></div></section>
+    <section class="section"><div class="container"><div class="section-title"><p class="eyebrow">Featured build</p><h2>A complete CNC plasma table, designed and built from the ground up.</h2><p>One of the clearest examples of the LaserX Design approach is a custom CNC plasma cutting table developed as a complete working machine rather than a collection of purchased parts.</p></div><div class="about-build-visual"><div class="about-build-image"><img src="/images/projects/x-series-1/x-series-feature.png" alt="Completed X Series 1 CNC plasma table" loading="lazy" decoding="async" /></div><div><div class="prose"><p>The project included the machine frame, gantry, water table, automatic drain and fill system, electrical layout, machine wiring, controls, component integration, CAD work, fabrication, finishing, assembly, testing, and continued software development.</p><p>It demonstrates the full scope of the company: mechanical design, CAD, fabrication, CNC cutting, machine systems, controls, wiring, troubleshooting, and the ability to carry a difficult project through to a functioning result.</p></div><div class="fact-list" aria-label="CNC plasma table project scope"><span>Mechanical design</span><span>SolidWorks and CAD development</span><span>Frame and gantry fabrication</span><span>Water-table system</span><span>Machine wiring and controls</span><span>Assembly, testing, and refinement</span></div><p class="generated-page-note">This featured-build photograph documents an actual LaserX Design machine.</p></div></div></div></section>
+    <section class="section section-alt"><div class="container"><div class="section-title"><p class="eyebrow">Capabilities</p><h2>From a single part to a complete automated machine.</h2><p>The company’s scope is intentionally broad because successful manufacturing projects rarely fit neatly into one trade.</p></div><div class="grid">{capabilities.map(([title, description], index) => <article class="card"><span class="card-number">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
     <section class="cta"><div class="container"><p class="eyebrow">Bring the problem</p><h2>Let’s design the right way to build it.</h2><p>LaserX Design supports custom parts, CAD work, fixtures, prototypes, fabrication, CNC cutting, automation, and complete machine-building projects.</p><div class="actions" style="justify-content:center"><a class="button button-primary" href="/contact">Start a project</a></div></div></section>
   </main>
-
   <footer><div class="container">© {new Date().getFullYear()} LaserX Design. Muskegon, Michigan.</div></footer>
 </BaseLayout>
