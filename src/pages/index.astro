@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/home-v2.css';
 import '../styles/image-assets.css';
 import '../styles/photo-assets.css';
+import '../styles/image-elements.css';
 
 const process = [
   ['Discover', 'Define the problem, constraints, interfaces, risk, and measurable outcome.'],
@@ -33,6 +34,7 @@ const process = [
 
     <main id="top">
       <section class="lx-hero">
+        <img class="lx-hero-media" src="/13CB4D59-3842-4CEF-A2A6-A18513B6B14A.png?v=8" alt="LaserX Design CNC plasma system in an industrial workshop" fetchpriority="high" />
         <div class="lx-shell lx-heroinner">
           <p class="lx-kicker">Design · Build · Integrate · Automate</p>
           <h1 class="lx-title">Engineering autonomous systems.</h1>
@@ -64,9 +66,18 @@ const process = [
             <p>Real machines, fixtures, controls, and manufacturing systems carried from the first model through the shop floor.</p>
           </div>
           <div class="lx-gallery">
-            <article class="lx-card"><div class="lx-cardmeta"><span class="lx-cardnum">01 / FLAGSHIP SYSTEM</span><h3>X Series 1 CNC Plasma Table</h3><p>Mechanical design, motion, water table, controls, wiring, fabrication, assembly, and software brought together as one machine.</p></div></article>
-            <article class="lx-card"><div class="lx-cardmeta"><span class="lx-cardnum">02 / PRODUCTION ENGINEERING</span><h3>Fixture Systems</h3><p>CAD-designed tooling developed for repeatability, access, dimensional control, and production flow.</p></div></article>
-            <article class="lx-card"><div class="lx-cardmeta"><span class="lx-cardnum">03 / CONTROLS</span><h3>Machine Integration</h3><p>Motion hardware, controllers, power, wiring, sensors, networking, testing, and commissioning.</p></div></article>
+            <article class="lx-card">
+              <img class="lx-card-image" src="/2FC904B8-CA3E-4159-8B2E-6A816ADCB04D.png?v=8" alt="X Series 1 CNC plasma table" loading="lazy" />
+              <div class="lx-cardmeta"><span class="lx-cardnum">01 / FLAGSHIP SYSTEM</span><h3>X Series 1 CNC Plasma Table</h3><p>Mechanical design, motion, water table, controls, wiring, fabrication, assembly, and software brought together as one machine.</p></div>
+            </article>
+            <article class="lx-card">
+              <img class="lx-card-image" src="/58F0A4CD-CD94-49A0-9EBA-BB088130C953.png?v=8" alt="Production fixture engineering" loading="lazy" />
+              <div class="lx-cardmeta"><span class="lx-cardnum">02 / PRODUCTION ENGINEERING</span><h3>Fixture Systems</h3><p>CAD-designed tooling developed for repeatability, access, dimensional control, and production flow.</p></div>
+            </article>
+            <article class="lx-card">
+              <img class="lx-card-image" src="/6096E2F0-06DE-4820-8FDD-A59169C2DFB2.png?v=8" alt="Machine controls and wiring integration" loading="lazy" />
+              <div class="lx-cardmeta"><span class="lx-cardnum">03 / CONTROLS</span><h3>Machine Integration</h3><p>Motion hardware, controllers, power, wiring, sensors, networking, testing, and commissioning.</p></div>
+            </article>
           </div>
         </div>
       </section>
@@ -79,7 +90,9 @@ const process = [
             <p>The plasma table is the proof: structure, gantry, motion, water table, controls, wiring, fabrication, finishing, and ongoing software development designed as one complete system.</p>
             <div class="lx-sequence"><span>CAD</span><span>Build</span><span>Wire</span><span>Run</span></div>
           </div>
-          <a class="lx-machine" href="/projects/cnc-plasma-table" aria-label="View the X Series 1 CNC plasma table case study"></a>
+          <a class="lx-machine" href="/projects/cnc-plasma-table" aria-label="View the X Series 1 CNC plasma table case study">
+            <img class="lx-machine-image" src="/6B4EFBD5-31C5-473D-A038-4B297BBC45AF.png?v=8" alt="CAD-to-machine development of the X Series CNC plasma table" loading="lazy" />
+          </a>
         </div>
       </section>
 
