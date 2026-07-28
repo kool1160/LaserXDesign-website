@@ -13,7 +13,7 @@ interface Props {
 const {
   title = 'LaserX Design | Engineering Autonomous Manufacturing Systems',
   description = 'LaserX Design engineers autonomous manufacturing systems, custom machines, controls, production fixtures, CNC cutting, and precision fabrication in Muskegon, Michigan.',
-  image = '/13CB4D59-3842-4CEF-A2A6-A18513B6B14A.png',
+  image = '/images/hero/laserx-home-hero.png',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, 'https://laserxdesign.com');
@@ -58,7 +58,7 @@ const structuredData = {
     <meta name="twitter:image" content={socialImage} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {isHome && <link rel="preload" as="image" href="/13CB4D59-3842-4CEF-A2A6-A18513B6B14A.png" fetchpriority="high" />}
+    {isHome && <link rel="preload" as="image" href="/images/hero/laserx-home-hero.png" fetchpriority="high" />}
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <title>{title}</title>
   </head>
