@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const projects = [
+  ['01', 'X Series 1 CNC Plasma Table', 'Complete 4 × 8 CNC plasma system covering mechanical design, CAD, fabrication, water table, gantry, wiring, motion control, assembly, integration, and ongoing software development.', '/projects/cnc-plasma-table'],
+  ['02', 'Production Fixture Systems', 'CAD-to-floor fixture development focused on alignment, repeatability, operator access, weld sequence, dimensional control, and scalable production output.', '#'],
+  ['03', 'Robotic Welding & Cobot Integration', 'Fixture tables, robot placement, access studies, workflow planning, sensing, and production-cell concepts developed around real manufacturing work.', '#'],
+  ['04', 'Hydraulic Assembly Fixtures', 'Controlled holding and alignment for cylinder fit-up, structural components, repeatable geometry, and production-ready fabrication.', '#'],
+  ['05', 'Custom Fabrication & Machine Components', 'Large assemblies, formed parts, aluminum and stainless work, prototypes, replacement components, and precision production builds.', '#']
+];
+---
+<BaseLayout title="Projects | LaserX Design" description="Explore LaserX Design projects in autonomous systems, CNC machinery, production fixtures, robotics, controls, and custom manufacturing equipment.">
+  <header class="site-header"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">X</span><span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span></a><nav class="nav-links"><a href="/solutions">Solutions</a><a href="/#capabilities">Capabilities</a><a href="/projects">Projects</a><a href="/engineering">Engineering</a><a href="/about">About</a><a class="nav-cta" href="/contact">Start a project</a></nav></div></header>
+  <main class="inner-page">
+    <section class="page-hero"><div class="container"><p class="eyebrow">Selected work</p><h1>Proof from concept through production.</h1><p class="lede">Projects are presented as systems—not photo dumps—showing the problem, engineering decisions, build process, integration, and production result.</p></div></section>
+    <section class="section"><div class="container"><div class="project-index">{projects.map(([number, title, description, href]) => <a class="project-row" href={href}><span class="project-number">{number}</span><div><h2>{title}</h2><p>{description}</p></div><span class="project-arrow">↗</span></a>)}</div></div></section>
+    <section class="cta"><div class="container cta-inner"><p class="eyebrow">Have a problem worth solving?</p><h2>Your project could be next.</h2><a class="button button-primary" href="/contact">Start a project ↗</a></div></section>
+  </main>
+</BaseLayout>
