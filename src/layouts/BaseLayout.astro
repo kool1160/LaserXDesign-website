@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'LaserX Design | Custom Welding, CNC Cutting & Fabrication',
-  description = 'LaserX Design provides custom welding, CNC plasma cutting, fabrication, fixtures, prototypes, and metal design services in Muskegon and West Michigan.',
+  title = 'LaserX Design | Autonomous Industrial Systems',
+  description = 'LaserX Design engineers autonomous manufacturing systems, custom machinery, controls, CAD, precision cutting, welding, fabrication, and complete industrial integration from concept through commissioning.',
 } = Astro.props;
 ---
 
@@ -16,9 +16,13 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#142131" />
+    <meta name="theme-color" content="#071019" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
   </head>
