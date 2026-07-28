@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const solutions = [
+  ['Autonomous manufacturing systems', 'Purpose-built equipment that combines mechanics, sensing, motion, controls, and software into one production-ready system.'],
+  ['Custom machine design', 'Complete machine architecture developed around the actual process, operator, maintenance needs, floor space, and output target.'],
+  ['Industrial automation', 'Cobot and robotic work cells, automated fixtures, material handling, sensors, safety, workflow, and production integration.'],
+  ['Controls & system integration', 'Electrical layout, machine wiring, motion control, devices, networking, HMI concepts, testing, and commissioning.'],
+  ['Production fixturing', 'Fixture systems engineered for repeatability, access, alignment, quality control, and scalable production output.'],
+  ['Process improvement', 'Practical redesign of manual, inconsistent, or inefficient work using better tooling, controls, information, and automation.']
+];
+---
+<BaseLayout title="Autonomous Manufacturing Solutions | LaserX Design" description="LaserX Design develops autonomous systems, custom machines, controls, fixtures, automation, and integrated manufacturing solutions.">
+  <header class="site-header"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">X</span><span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span></a><nav class="nav-links"><a href="/solutions">Solutions</a><a href="/#capabilities">Capabilities</a><a href="/projects">Projects</a><a href="/engineering">Engineering</a><a href="/about">About</a><a class="nav-cta" href="/contact">Start a project</a></nav></div></header>
+  <main class="inner-page">
+    <section class="page-hero"><div class="container"><p class="eyebrow">Solutions</p><h1>Manufacturing systems engineered around the work.</h1><p class="lede">LaserX Design brings mechanical design, fabrication, controls, wiring, automation, and integration together under one accountable build path.</p></div></section>
+    <section class="section"><div class="container"><div class="capability-grid">{solutions.map(([title, description], index) => <article class="capability-card"><span class="card-number">0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+    <section class="statement"><div class="container statement-grid"><p class="eyebrow">The difference</p><div><h2>One system. One owner. <em>No disconnected handoffs.</em></h2><p>Projects are developed as complete systems so the structure, controls, tooling, fabrication, electrical architecture, and production workflow support each other from the beginning.</p></div></div></section>
+    <section class="cta"><div class="container cta-inner"><p class="eyebrow">Bring us the bottleneck</p><h2>Let’s engineer the right solution.</h2><a class="button button-primary" href="/contact">Start a project ↗</a></div></section>
+  </main>
+</BaseLayout>
