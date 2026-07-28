@@ -1,0 +1,111 @@
+@media (max-width: 700px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  main,
+  section,
+  header,
+  footer,
+  .container,
+  .hero-layout,
+  .hero-content,
+  .statement-grid,
+  .section-heading-row,
+  .project-layout,
+  .about-grid,
+  .cta-inner {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .container {
+    width: calc(100% - 2rem);
+  }
+
+  .hero-layout {
+    padding-top: 7.1rem;
+  }
+
+  .hero-content h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.35rem, 10.4vw, 3.2rem);
+    line-height: .95;
+    letter-spacing: -.045em;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    text-wrap: wrap;
+  }
+
+  .lede,
+  .statement p,
+  .section-heading-row > p,
+  .project-copy > p,
+  .about-grid p,
+  .cta p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .hero-proof {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-proof span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .statement h2,
+  .section-heading-row h2,
+  .project-copy h2,
+  .about-grid h2,
+  .cta h2 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .project-specs div {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .project-specs dd,
+  .footer-grid,
+  .text-link {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: calc(100% - 1.5rem);
+  }
+
+  .nav-cta {
+    padding-inline: .6rem;
+    font-size: .54rem;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.12rem, 10.2vw, 2.7rem);
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    font-size: .58rem;
+    letter-spacing: .11em;
+  }
+
+  .button {
+    min-height: 48px;
+  }
+}
