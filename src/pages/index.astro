@@ -1,207 +1,123 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-const capabilities = [
-  {
-    number: '01',
-    title: 'Autonomous systems',
-    description: 'Purpose-built equipment and connected manufacturing systems designed to sense, decide, move, and perform repeatable work.'
-  },
-  {
-    number: '02',
-    title: 'Machine design & automation',
-    description: 'Mechanical design, motion, sensors, controls, guarding, workflow, and operator interaction developed as one complete machine.'
-  },
-  {
-    number: '03',
-    title: 'Controls & integration',
-    description: 'Machine wiring, devices, networking, controls, testing, commissioning, and integration with the systems already on your floor.'
-  },
-  {
-    number: '04',
-    title: 'CAD & manufacturing design',
-    description: 'SolidWorks and AutoCAD development for equipment, fixtures, parts, assemblies, prototypes, and production-ready documentation.'
-  },
-  {
-    number: '05',
-    title: 'Precision cutting',
-    description: 'CNC plasma and laser-ready design for brackets, components, fixtures, prototypes, replacement parts, and complete cut assemblies.'
-  },
-  {
-    number: '06',
-    title: 'TIG & MIG fabrication',
-    description: 'Steel, stainless, and aluminum fabrication backed by fixture thinking, dimensional control, and real production experience.'
-  }
-];
+import '../styles/home-v2.css';
 
 const process = [
-  ['Discover', 'Define the work, constraints, risk, interfaces, and measurable outcome.'],
-  ['Engineer', 'Develop the mechanical, electrical, controls, fabrication, and integration plan.'],
-  ['Build', 'Cut, machine, fabricate, wire, assemble, and document the complete system.'],
-  ['Integrate', 'Install, connect, test, prove, refine, and prepare the system for real production.']
+  ['Discover', 'Define the problem, constraints, interfaces, risk, and measurable outcome.'],
+  ['Engineer', 'Develop the mechanical, electrical, controls, fabrication, and integration plan as one system.'],
+  ['Build', 'Cut, fabricate, wire, assemble, test, and document the complete machine or solution.'],
+  ['Integrate', 'Connect, commission, prove, refine, and prepare the system for real production.']
 ];
 ---
 
-<BaseLayout title="LaserX Design | Autonomous Industrial Systems">
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="LaserX Design home">
-        <span class="brand-mark" aria-hidden="true">X</span>
-        <span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#solutions">Solutions</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#projects">Projects</a>
-        <a href="/about">About</a>
-        <a class="nav-cta" href="#contact">Start a project</a>
-      </nav>
-    </div>
-  </header>
+<BaseLayout title="LaserX Design | Engineering Autonomous Systems">
+  <div class="lx-home">
+    <header class="lx-header">
+      <div class="lx-shell lx-nav">
+        <a class="lx-brand" href="#top" aria-label="LaserX Design home">
+          <span class="lx-brandmark">X</span>
+          <span class="lx-wordmark"><strong>LASERX</strong><small>DESIGN</small></span>
+        </a>
+        <nav class="lx-navlinks" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#process">Process</a>
+          <a href="/projects">Projects</a>
+          <a href="/engineering">Engineering</a>
+          <a href="/about">About</a>
+        </nav>
+        <a class="lx-navcta" href="#contact">Start a project</a>
+      </div>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="container hero-layout">
-        <div class="hero-content">
-          <p class="eyebrow">Design · Build · Integrate · Automate</p>
-          <h1>Engineering autonomous manufacturing systems.</h1>
-          <p class="lede">LaserX Design develops complete industrial solutions—from CAD, controls, and machine wiring through precision cutting, fabrication, integration, and commissioning.</p>
-          <div class="actions">
-            <a class="button button-primary" href="#contact">Start a project <span>↗</span></a>
-            <a class="button button-secondary" href="#projects">Explore our work</a>
+    <main id="top">
+      <section class="lx-hero">
+        <div class="lx-shell lx-heroinner">
+          <p class="lx-kicker">Design · Build · Integrate · Automate</p>
+          <h1 class="lx-title">Engineering autonomous systems.</h1>
+          <p class="lx-copy">LaserX Design turns manufacturing problems into complete working systems—from CAD and controls through precision cutting, fabrication, wiring, integration, and commissioning.</p>
+          <div class="lx-actions">
+            <a class="lx-btn lx-btn-primary" href="#contact">Start a project ↗</a>
+            <a class="lx-btn" href="#work">Explore the work</a>
           </div>
-          <div class="hero-proof" aria-label="Core disciplines">
-            <span>Autonomous systems</span>
-            <span>Machine design</span>
-            <span>Controls</span>
-            <span>Fabrication</span>
+          <div class="lx-disciplines" aria-label="Core disciplines">
+            <span>Machine design</span><span>Automation</span><span>Controls</span><span>Fabrication</span>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="LaserX Design system scope">
-          <p class="panel-label">Complete system scope</p>
-          <div class="system-stack">
-            <span>01 / Mechanical</span>
-            <span>02 / Electrical</span>
-            <span>03 / Controls</span>
-            <span>04 / Fabrication</span>
-            <span>05 / Integration</span>
-          </div>
-          <div class="panel-status"><i></i> Built for production</div>
-        </aside>
-      </div>
-      <a class="scroll-cue" href="#solutions" aria-label="Scroll to solutions">Scroll <span>↓</span></a>
-    </section>
+      </section>
 
-    <section class="statement" id="solutions">
-      <div class="container statement-grid">
-        <p class="eyebrow">What we build</p>
-        <div>
-          <h2>Not another fabrication shop.<br /><em>A complete design-and-build partner.</em></h2>
-          <p>We solve manufacturing problems by treating mechanics, controls, fabrication, wiring, software interfaces, and people as parts of one system. The result is equipment that is practical to operate, maintain, and improve.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section capabilities" id="capabilities">
-      <div class="container">
-        <div class="section-heading-row">
+      <section class="lx-intro">
+        <div class="lx-shell lx-introgrid">
+          <p class="lx-sectionlabel">What we build</p>
           <div>
-            <p class="eyebrow">Capabilities</p>
-            <h2>From first sketch to proven system.</h2>
-          </div>
-          <p>One coordinated path from idea through production—without handing the project between disconnected vendors.</p>
-        </div>
-        <div class="capability-grid">
-          {capabilities.map((item) => (
-            <article class="capability-card">
-              <span class="card-number">{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <span class="card-arrow" aria-hidden="true">↗</span>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="featured-project" id="projects">
-      <div class="container project-layout">
-        <div class="project-copy">
-          <p class="eyebrow">Flagship project / X Series 1</p>
-          <h2>A complete CNC plasma system—designed and built from the ground up.</h2>
-          <p>Mechanical structure, water table, gantry, motion, wiring, controls, CAD, fabrication, assembly, finishing, and ongoing software development brought together as one working machine.</p>
-          <dl class="project-specs">
-            <div><dt>Scope</dt><dd>Full-system design & build</dd></div>
-            <div><dt>Platform</dt><dd>4 × 8 CNC plasma</dd></div>
-            <div><dt>Disciplines</dt><dd>CAD · Fabrication · Wiring · Controls</dd></div>
-          </dl>
-          <a class="text-link" href="/projects/cnc-plasma-table">View the case study <span>↗</span></a>
-        </div>
-        <div class="project-visual">
-          <div class="project-image" role="img" aria-label="LaserX Design CNC plasma table"></div>
-          <div class="project-tag">Designed / Fabricated / Wired / Integrated</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process-section">
-      <div class="container">
-        <div class="section-heading-row">
-          <div>
-            <p class="eyebrow">How we work</p>
-            <h2>One system. One owner. Clear responsibility.</h2>
+            <h2>Not another fabrication shop.<em>A complete design-and-build partner.</em></h2>
+            <p>Mechanics, controls, fabrication, wiring, software interfaces, and operator workflow are treated as one connected system. The result is equipment that is practical to run, maintain, improve, and trust.</p>
           </div>
         </div>
-        <div class="process-grid">
-          {process.map(([title, description], index) => (
-            <article class="process-step">
-              <span>0{index + 1}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
+      </section>
+
+      <section class="lx-showcase" id="work">
+        <div class="lx-shell">
+          <div class="lx-showcasehead">
+            <div><p class="lx-sectionlabel">Selected engineering</p><h2>Idea to implementation.</h2></div>
+            <p>Real machines, fixtures, controls, and manufacturing systems carried from the first model through the shop floor.</p>
+          </div>
+          <div class="lx-gallery">
+            <article class="lx-card"><div class="lx-cardmeta"><span class="lx-cardnum">01 / FLAGSHIP SYSTEM</span><h3>X Series 1 CNC Plasma Table</h3><p>Mechanical design, motion, water table, controls, wiring, fabrication, assembly, and software brought together as one machine.</p></div></article>
+            <article class="lx-card"><div class="lx-cardmeta"><span class="lx-cardnum">02 / PRODUCTION ENGINEERING</span><h3>Fixture Systems</h3><p>CAD-designed tooling developed for repeatability, access, dimensional control, and production flow.</p></div></article>
+            <article class="lx-card"><div class="lx-cardmeta"><span class="lx-cardnum">03 / CONTROLS</span><h3>Machine Integration</h3><p>Motion hardware, controllers, power, wiring, sensors, networking, testing, and commissioning.</p></div></article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="proof-band">
-      <div class="container proof-grid">
-        <div><strong>200K+</strong><span>parts produced through proven fixture systems</span></div>
-        <div><strong>8×</strong><span>documented production-output improvement</span></div>
-        <div><strong>0.030 in</strong><span>critical fabrication tolerance verified</span></div>
-        <div><strong>CAD → floor</strong><span>design carried through implementation</span></div>
-      </div>
-    </section>
-
-    <section class="about-preview">
-      <div class="container about-grid">
-        <p class="eyebrow">About LaserX Design</p>
-        <div>
-          <h2>Engineering informed by the reality of the shop floor.</h2>
-          <p>LaserX Design is built on hands-on experience across welding, fabrication, fixtures, CAD, cobot implementation, machine wiring, controls, networking, production improvement, and complete equipment builds. We design for the people who have to run it, maintain it, and depend on it.</p>
-          <a class="text-link" href="/about">Meet the builder behind the systems <span>↗</span></a>
+      <section class="lx-story">
+        <div class="lx-shell lx-storygrid">
+          <div class="lx-storycopy">
+            <p class="lx-sectionlabel">Flagship project / X Series 1</p>
+            <h2>CAD became a working machine.</h2>
+            <p>The plasma table is the proof: structure, gantry, motion, water table, controls, wiring, fabrication, finishing, and ongoing software development designed as one complete system.</p>
+            <div class="lx-sequence"><span>CAD</span><span>Build</span><span>Wire</span><span>Run</span></div>
+          </div>
+          <a class="lx-machine" href="/projects/cnc-plasma-table" aria-label="View the X Series 1 CNC plasma table case study"></a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="cta" id="contact">
-      <div class="container cta-inner">
-        <p class="eyebrow">Have a system, machine, or manufacturing problem?</p>
-        <h2>Let’s build what the process actually needs.</h2>
-        <p>Bring the idea, bottleneck, damaged machine, manual process, or impossible part. We’ll start by understanding the work.</p>
-        <div class="actions">
-          <a class="button button-primary" href="mailto:hello@laserxdesign.com">Start a conversation <span>↗</span></a>
+      <section class="lx-process" id="process">
+        <div class="lx-shell">
+          <p class="lx-sectionlabel">From idea to implementation</p>
+          <h2>One system. One owner. Clear responsibility.</h2>
+          <div class="lx-processgrid">
+            {process.map(([title, description], index) => (
+              <article class="lx-step"><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer>
-    <div class="container footer-grid">
-      <div><strong>LASERX DESIGN</strong><p>Autonomous systems · Design · Fabrication · Integration</p></div>
-      <div><span>Muskegon, Michigan</span><span>Serving West Michigan and beyond</span></div>
-      <div>© {new Date().getFullYear()} LaserX Design</div>
-    </div>
-  </footer>
+      <section class="lx-proof">
+        <div class="lx-shell lx-proofgrid">
+          <div class="lx-proofitem"><strong>200K+</strong><span>parts produced through proven fixture systems</span></div>
+          <div class="lx-proofitem"><strong>8×</strong><span>documented production-output improvement</span></div>
+          <div class="lx-proofitem"><strong>0.030 in</strong><span>critical fabrication tolerance verified</span></div>
+          <div class="lx-proofitem"><strong>CAD → floor</strong><span>design carried through implementation</span></div>
+        </div>
+      </section>
+
+      <section class="lx-final" id="contact">
+        <div class="lx-shell">
+          <p class="lx-sectionlabel">Have a machine, process, or manufacturing problem?</p>
+          <h2>Build what the process actually needs.</h2>
+          <p>Bring the bottleneck, damaged machine, manual process, custom equipment idea, or impossible part. We start by understanding the work.</p>
+          <div class="lx-actions"><a class="lx-btn lx-btn-primary" href="mailto:hello@laserxdesign.com">Start a conversation ↗</a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="lx-footer">
+      <div class="lx-shell lx-footergrid">
+        <div><strong>LASERX DESIGN</strong><p>Autonomous systems · Design · Fabrication · Integration</p></div>
+        <div>Muskegon, Michigan<br />Serving West Michigan and beyond</div>
+        <div>© {new Date().getFullYear()} LaserX Design</div>
+      </div>
+    </footer>
+  </div>
 </BaseLayout>
