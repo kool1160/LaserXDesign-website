@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const services = [
+  ['01', 'Custom Welding', 'TIG and MIG welding for steel, stainless, and aluminum projects ranging from one-off repairs to repeatable production work.'],
+  ['02', 'CNC Plasma Cutting', 'Accurate profile cutting for brackets, signs, fixtures, prototypes, replacement parts, and custom components.'],
+  ['03', 'Fabrication & Design', 'Practical metal design, CAD-driven development, fixtures, prototypes, and complete fabricated assemblies.'],
+];
+---
+
+<BaseLayout>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="LaserX Design home">
+        <span class="brand-mark">X</span>
+        <span>LASERX DESIGN</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">Muskegon · West Michigan</p>
+        <h1>Built with precision. Designed to work.</h1>
+        <p class="lede">Custom welding, CNC plasma cutting, fabrication, fixtures, prototypes, and practical metal design—from concept through finished part.</p>
+        <div class="actions">
+          <a class="button button-primary" href="#contact">Start a project</a>
+          <a class="button button-secondary" href="#work">View our work</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Capabilities</p>
+          <h2>Metalwork backed by real design experience.</h2>
+          <p>LaserX Design brings fabrication, welding, CNC cutting, and engineering-minded problem solving together under one roof.</p>
+        </div>
+        <div class="grid">
+          {services.map(([number, title, description]) => (
+            <article class="card">
+              <span class="card-number">{number}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-title">
+          <p class="eyebrow">Selected work</p>
+          <h2>Real projects. Real fabrication.</h2>
+          <p>This section is prepared for the project gallery. Original photos, captions, materials, processes, and project outcomes will be added as content is approved.</p>
+        </div>
+        <div class="grid">
+          <article class="card"><span class="card-number">Project 01</span><h3>Custom CNC plasma table</h3><p>Designed, fabricated, wired, assembled, and developed as a complete working system.</p></article>
+          <article class="card"><span class="card-number">Project 02</span><h3>Welded assemblies</h3><p>Precision fabrication, fit-up, TIG/MIG welding, and repeatable fixture-driven work.</p></article>
+          <article class="card"><span class="card-number">Project 03</span><h3>Fixtures and prototypes</h3><p>Practical designs built to control variation, improve repeatability, and make the work easier.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="about">
+      <div class="container section-title">
+        <p class="eyebrow">About LaserX Design</p>
+        <h2>Design that understands the shop floor.</h2>
+        <p>LaserX Design is built around hands-on manufacturing experience. The goal is simple: create metalwork, tooling, and systems that are accurate, practical, maintainable, and ready to do the job.</p>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <p class="eyebrow">Have a project in mind?</p>
+        <h2>Let’s build something that works.</h2>
+        <p>Contact details and the production quote form will be connected during the next build phase.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="button button-primary" href="mailto:hello@laserxdesign.com">Request a quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© {new Date().getFullYear()} LaserX Design. Muskegon, Michigan.</div>
+  </footer>
+</BaseLayout>
