@@ -107,8 +107,22 @@ const process = [
 
       <section class="lx-process reveal" id="process">
         <div class="lx-shell">
-          <p class="lx-sectionlabel">From idea to implementation</p>
-          <h2>One system. One owner. Clear responsibility.</h2>
+          <div class="lx-processhead">
+            <div>
+              <p class="lx-sectionlabel">From idea to implementation</p>
+              <h2>One system. One owner. Clear responsibility.</h2>
+            </div>
+            <p>The X Series 1 shows the complete path—from the first CAD model through controls, fabrication, assembly, and a commissioned working machine.</p>
+          </div>
+          <a class="lx-processfeature" href="/projects/cnc-plasma-table" aria-label="View the X Series 1 full process case study">
+            <img class="lx-processimage" src="/images/our-process/x-series-1/x-series-1-process.png" alt="X Series 1 process showing CAD design, controls, fabrication, welding, and completed CNC plasma machine" width="1536" height="1024" loading="lazy" decoding="async" />
+            <span class="lx-processshade" aria-hidden="true"></span>
+            <div class="lx-processcaption">
+              <span>Our Process / X Series 1</span>
+              <strong>CAD, controls, fabrication, and commissioning—one complete system.</strong>
+              <em>View the case study ↗</em>
+            </div>
+          </a>
           <div class="lx-processgrid">
             {process.map(([title, description], index) => (
               <article class="lx-step"><span>0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>
