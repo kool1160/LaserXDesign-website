@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 
 const solutions = [
   ['Autonomous manufacturing systems', 'Purpose-built equipment that combines mechanics, sensing, motion, controls, and software into one production-ready system.'],
@@ -11,7 +12,7 @@ const solutions = [
 ];
 ---
 <BaseLayout title="Autonomous Manufacturing Solutions | LaserX Design" description="LaserX Design develops autonomous systems, custom machines, controls, fixtures, automation, and integrated manufacturing solutions.">
-  <header class="site-header"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">X</span><span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span></a><nav class="nav-links"><a href="/solutions">Solutions</a><a href="/#capabilities">Capabilities</a><a href="/projects">Projects</a><a href="/engineering">Engineering</a><a href="/about">About</a><a class="nav-cta" href="/contact">Start a project</a></nav></div></header>
+  <SiteHeader />
   <main class="inner-page">
     <section class="page-hero"><div class="container"><p class="eyebrow">Solutions</p><h1>Manufacturing systems engineered around the work.</h1><p class="lede">LaserX Design brings mechanical design, fabrication, controls, wiring, automation, and integration together under one accountable build path.</p></div></section>
     <section class="section"><div class="container"><div class="capability-grid">{solutions.map(([title, description], index) => <article class="capability-card"><span class="card-number">0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>

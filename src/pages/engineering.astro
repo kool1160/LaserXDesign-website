@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 const disciplines = [
   ['Mechanical design', 'SolidWorks, AutoCAD, and Inventor development for machines, frames, fixtures, assemblies, formed parts, and production tooling.'],
   ['Design for manufacturing', 'Parts and systems developed around cutting, forming, welding, assembly, service access, material use, and real shop capability.'],
@@ -10,7 +11,7 @@ const disciplines = [
 ];
 ---
 <BaseLayout title="Engineering & CAD | LaserX Design" description="SolidWorks, AutoCAD, Inventor, machine design, production fixtures, electrical architecture, and CAD-to-floor engineering from LaserX Design.">
-  <header class="site-header"><div class="container nav"><a class="brand" href="/"><span class="brand-mark">X</span><span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span></a><nav class="nav-links"><a href="/solutions">Solutions</a><a href="/#capabilities">Capabilities</a><a href="/projects">Projects</a><a href="/engineering">Engineering</a><a href="/about">About</a><a class="nav-cta" href="/contact">Start a project</a></nav></div></header>
+  <SiteHeader />
   <main class="inner-page">
     <section class="page-hero"><div class="container"><p class="eyebrow">Engineering</p><h1>Designed for the floor. Detailed for the build.</h1><p class="lede">The model is only valuable when the machine, fixture, or assembly can be built, wired, operated, maintained, and trusted in production.</p></div></section>
     <section class="section"><div class="container"><div class="section-heading-row"><div><p class="eyebrow">Core disciplines</p><h2>Engineering that stays connected to manufacturing.</h2></div></div><div class="capability-grid">{disciplines.map(([title, description], index) => <article class="capability-card"><span class="card-number">0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>

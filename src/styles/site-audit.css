@@ -1,0 +1,40 @@
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{overflow-x:clip}main,section,.container,.lx-shell,.page-hero-content,.section-title,.prose,.contact-copy,.project-copy{min-width:0}main h1,main h2,main h3,main p,.lede,.lx-copy{max-width:100%;overflow-wrap:normal!important;word-break:normal!important;hyphens:none;text-wrap:pretty}.site-mobilemenu{display:none;position:relative;margin-left:auto}.site-mobilemenu summary{list-style:none;width:44px;height:44px;display:grid;place-content:center;gap:5px;border:1px solid rgba(73,185,242,.5);cursor:pointer}.site-mobilemenu summary::-webkit-details-marker{display:none}.site-mobilemenu summary span,.site-mobilemenu summary:before,.site-mobilemenu summary:after{content:"";display:block;width:20px;height:2px;background:#f6f8fb;transition:transform .25s ease,opacity .25s ease}.site-mobilemenu[open] summary span{opacity:0}.site-mobilemenu[open] summary:before{transform:translateY(7px) rotate(45deg)}.site-mobilemenu[open] summary:after{transform:translateY(-7px) rotate(-45deg)}.site-mobilepanel{position:absolute;right:0;top:calc(100% + 12px);width:min(84vw,340px);padding:.8rem;border:1px solid rgba(255,255,255,.14);background:rgba(5,10,16,.985);box-shadow:0 26px 60px rgba(0,0,0,.52);backdrop-filter:blur(18px)}.site-mobilepanel a{display:flex;align-items:center;min-height:50px;padding:0 .85rem;border-bottom:1px solid rgba(255,255,255,.09);font-size:.73rem;font-weight:850;letter-spacing:.09em;text-transform:uppercase}.site-mobilepanel a:last-child{justify-content:center;margin-top:.7rem;border:1px solid rgba(73,185,242,.55);color:#49b9f2}.case-hero{background:radial-gradient(circle at 75% 35%,rgba(73,185,242,.18),transparent 32%),linear-gradient(90deg,rgba(4,9,14,.97),rgba(4,9,14,.6)),url('/images/projects/x-series-1/x-series-feature.png') 58% center/cover no-repeat!important}
+
+@media(max-width:980px){.nav-links{display:none!important}.site-mobilemenu{display:block}.nav{gap:1rem}.brand-copy{min-width:0}}
+
+@media(max-width:759px){
+  .container,.lx-shell{width:100%!important;max-width:100%!important;margin-inline:auto;padding-left:max(1.45rem,env(safe-area-inset-left));padding-right:max(1.45rem,env(safe-area-inset-right))}
+  .inner-page{padding-top:68px}
+  .page-hero{padding:4.75rem 0 4rem}
+  .page-hero h1,.case-hero h1{font-size:clamp(2.2rem,9.6vw,3.05rem)!important;line-height:.98!important;letter-spacing:-.045em!important;text-wrap:balance}
+  .page-hero .lede,.case-hero .lede{font-size:.98rem;line-height:1.58}
+  .eyebrow,.lx-sectionlabel,.lx-kicker{font-size:.6rem!important;line-height:1.45;letter-spacing:.13em!important}
+  .section,.statement,.featured-project,.about-preview,.cta{padding:4.5rem 0}
+  .section-title h2,.statement h2,.section-heading-row h2,.project-copy h2,.about-grid h2,.contact-copy h2,.cta h2,.case-overview h2{font-size:clamp(2rem,8.6vw,2.85rem)!important;line-height:1!important;letter-spacing:-.04em!important}
+  .lx-intro h2,.lx-story h2,.lx-process h2,.lx-final h2{font-size:clamp(2rem,8.6vw,2.85rem)!important;line-height:1!important;letter-spacing:-.04em!important;text-wrap:balance}
+  .lx-story,.lx-intro,.lx-showcase,.lx-process,.lx-final{padding-top:4.25rem;padding-bottom:4.25rem}
+  .lx-storygrid,.lx-introgrid,.lx-processhead{gap:1.15rem}
+  .lx-storycopy>p:not(.lx-sectionlabel),.lx-intro p,.lx-processhead>p,.lx-final p:not(.lx-sectionlabel),.section-title>p,.prose p,.contact-copy p{font-size:.97rem;line-height:1.62}
+  .lx-sequence{gap:.35rem;margin-top:1.35rem}.lx-sequence span{padding:.65rem .15rem;font-size:.55rem;letter-spacing:.06em}
+  .lx-processfeature{aspect-ratio:16/10!important;min-height:0!important;max-height:none!important;margin:1.4rem 0 2rem}
+  .lx-processimage{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:58% center!important}
+  .lx-processcaption{inset:auto .9rem .9rem;gap:.35rem}.lx-processcaption strong{font-size:1rem;line-height:1.22}.lx-processcaption em{font-size:.58rem}
+  .lx-card{min-height:390px}.lx-card h3{font-size:1.3rem}.lx-card p{font-size:.94rem;line-height:1.52}
+  .project-row{padding:1.35rem}.project-row h2{font-size:1.6rem!important;line-height:1.08}.project-row p{font-size:.94rem;line-height:1.58}
+  .case-hero{min-height:68svh;padding:8rem 0 4rem;background-position:62% center!important}
+  .case-overview{padding:4.5rem 0}.case-overview-grid{gap:1.5rem}.case-overview-grid>div:last-child>p{font-size:.98rem;line-height:1.65}
+  .capability-card h3{overflow-wrap:normal!important;word-break:normal!important}
+  .contact-layout{gap:2.4rem}
+  .footer-grid,.lx-footergrid{padding-bottom:max(.5rem,env(safe-area-inset-bottom))}
+}
+
+@media(max-width:420px){
+  .container,.lx-shell{padding-left:max(1.2rem,env(safe-area-inset-left));padding-right:max(1.2rem,env(safe-area-inset-right))}
+  .page-hero h1,.case-hero h1{font-size:clamp(2.05rem,9.3vw,2.65rem)!important}
+  .lx-intro h2,.lx-story h2,.lx-process h2,.lx-final h2,.section-title h2,.statement h2,.section-heading-row h2,.project-copy h2,.about-grid h2,.contact-copy h2,.cta h2,.case-overview h2{font-size:clamp(1.9rem,8.3vw,2.45rem)!important}
+  .brand-copy small{display:block!important;font-size:.48rem;letter-spacing:.2em}
+  .site-mobilepanel{right:-.1rem;width:min(88vw,330px)}
+  .lx-processfeature{aspect-ratio:4/3!important}
+}
+
+@media(prefers-reduced-motion:reduce){.site-mobilemenu summary span,.site-mobilemenu summary:before,.site-mobilemenu summary:after{transition:none}}

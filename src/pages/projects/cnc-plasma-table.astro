@@ -1,80 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
 import '../../styles/case-study.css';
 ---
 
-<BaseLayout
-  title="X Series 1 CNC Plasma Table | LaserX Design"
-  description="A complete CNC plasma cutting system designed, fabricated, wired, assembled, and developed by LaserX Design."
->
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="LaserX Design home">
-        <span class="brand-mark" aria-hidden="true">X</span>
-        <span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="/#solutions">Solutions</a>
-        <a href="/#capabilities">Capabilities</a>
-        <a href="/#projects">Projects</a>
-        <a href="/about">About</a>
-        <a class="nav-cta" href="/#contact">Start a project</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
+<BaseLayout title="X Series 1 CNC Plasma Table | LaserX Design" description="A complete CNC plasma cutting system designed, fabricated, wired, assembled, and developed by LaserX Design." image="/images/projects/x-series-1/x-series-feature.png">
+  <SiteHeader />
+  <main class="case-page">
     <section class="case-hero">
-      <div class="container">
-        <p class="eyebrow">Flagship case study / X Series 1</p>
-        <h1>One machine.<br />Every discipline.</h1>
-        <p class="lede">A custom 4 × 8 CNC plasma system carried from first concept through CAD, fabrication, wiring, controls, assembly, finishing, testing, and continued software development.</p>
-      </div>
+      <div class="container"><p class="eyebrow">Flagship case study / X Series 1</p><h1>One machine.<br />Every discipline.</h1><p class="lede">A custom 4 × 8 CNC plasma system carried from first concept through CAD, fabrication, wiring, controls, assembly, finishing, testing, and continued software development.</p></div>
     </section>
 
-    <section class="case-overview">
-      <div class="container case-overview-grid">
-        <div>
-          <p class="eyebrow">Project overview</p>
-          <h2>Built as a complete system—not a collection of purchased parts.</h2>
-        </div>
-        <div>
-          <p>The X Series 1 demonstrates the full LaserX Design approach: understand the process, engineer the structure, control the interfaces, fabricate the machine, wire the system, prove the motion, and keep improving the platform.</p>
-          <dl class="project-specs">
-            <div><dt>Machine</dt><dd>4 × 8 CNC plasma cutting table</dd></div>
-            <div><dt>Mechanical</dt><dd>Frame, gantry, water table, motion system</dd></div>
-            <div><dt>Electrical</dt><dd>Machine wiring, controls, devices, integration</dd></div>
-            <div><dt>Development</dt><dd>Diagnostics, protocol analysis, software evolution</dd></div>
-          </dl>
-        </div>
-      </div>
-    </section>
+    <section class="case-overview"><div class="container case-overview-grid"><div><p class="eyebrow">Project overview</p><h2>Built as a complete system—not a collection of purchased parts.</h2></div><div><p>The X Series 1 demonstrates the full LaserX Design approach: understand the process, engineer the structure, control the interfaces, fabricate the machine, wire the system, prove the motion, and keep improving the platform.</p><dl class="project-specs"><div><dt>Machine</dt><dd>4 × 8 CNC plasma cutting table</dd></div><div><dt>Mechanical</dt><dd>Frame, gantry, water table, motion system</dd></div><div><dt>Electrical</dt><dd>Machine wiring, controls, devices, integration</dd></div><div><dt>Development</dt><dd>Diagnostics, protocol analysis, software evolution</dd></div></dl></div></div></section>
 
-    <section class="section case-disciplines">
-      <div class="container">
-        <div class="section-heading-row">
-          <div>
-            <p class="eyebrow">Disciplines combined</p>
-            <h2>Designed across every layer.</h2>
-          </div>
-        </div>
-        <div class="capability-grid">
-          <article class="capability-card"><span class="card-number">01</span><h3>Mechanical design</h3><p>Structure, work envelope, stiffness, motion, serviceability, and manufacturing strategy developed together.</p></article>
-          <article class="capability-card"><span class="card-number">02</span><h3>Fabrication</h3><p>Cut, formed, fit, welded, assembled, finished, and verified as a complete production machine.</p></article>
-          <article class="capability-card"><span class="card-number">03</span><h3>Machine wiring</h3><p>Power, signal, devices, cable management, controls, and machine interfaces integrated into the build.</p></article>
-          <article class="capability-card"><span class="card-number">04</span><h3>Controls</h3><p>Motion, torch control, operational states, diagnostics, and system behavior developed for real use.</p></article>
-          <article class="capability-card"><span class="card-number">05</span><h3>Process design</h3><p>Water management, cutting workflow, loading, maintenance, and operator interaction considered from the start.</p></article>
-          <article class="capability-card"><span class="card-number">06</span><h3>Ongoing development</h3><p>The machine continues as a platform for diagnostic tooling, protocol understanding, and better control software.</p></article>
-        </div>
-      </div>
-    </section>
+    <section class="section case-disciplines"><div class="container"><div class="section-heading-row"><div><p class="eyebrow">Disciplines combined</p><h2>Designed across every layer.</h2></div></div><div class="capability-grid"><article class="capability-card"><span class="card-number">01</span><h3>Mechanical design</h3><p>Structure, work envelope, stiffness, motion, serviceability, and manufacturing strategy developed together.</p></article><article class="capability-card"><span class="card-number">02</span><h3>Fabrication</h3><p>Cut, formed, fit, welded, assembled, finished, and verified as a complete production machine.</p></article><article class="capability-card"><span class="card-number">03</span><h3>Machine wiring</h3><p>Power, signal, devices, cable management, controls, and machine interfaces integrated into the build.</p></article><article class="capability-card"><span class="card-number">04</span><h3>Controls</h3><p>Motion, torch control, operational states, diagnostics, and system behavior developed for real use.</p></article><article class="capability-card"><span class="card-number">05</span><h3>Process design</h3><p>Water management, cutting workflow, loading, maintenance, and operator interaction considered from the start.</p></article><article class="capability-card"><span class="card-number">06</span><h3>Ongoing development</h3><p>The machine continues as a platform for diagnostic tooling, protocol understanding, and better control software.</p></article></div></div></section>
 
-    <section class="cta">
-      <div class="container cta-inner">
-        <p class="eyebrow">Need a machine that does not exist yet?</p>
-        <h2>That is exactly where we start.</h2>
-        <div class="actions"><a class="button button-primary" href="mailto:hello@laserxdesign.com">Discuss a system <span>↗</span></a></div>
-      </div>
-    </section>
+    <section class="cta"><div class="container cta-inner"><p class="eyebrow">Need a machine that does not exist yet?</p><h2>That is exactly where we start.</h2><div class="actions"><a class="button button-primary" href="/contact">Discuss a system <span>↗</span></a></div></div></section>
   </main>
 </BaseLayout>

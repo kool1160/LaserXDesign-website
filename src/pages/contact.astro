@@ -1,13 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
 ---
 <BaseLayout title="Start a Project | LaserX Design" description="Contact LaserX Design about autonomous systems, machine design, controls, CAD, fixtures, CNC cutting, welding, or manufacturing integration.">
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="/" aria-label="LaserX Design home"><span class="brand-mark">X</span><span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span></a>
-      <nav class="nav-links" aria-label="Primary navigation"><a href="/solutions">Solutions</a><a href="/projects">Projects</a><a href="/engineering">Engineering</a><a href="/about">About</a><a class="nav-cta" href="/contact">Start a project</a></nav>
-    </div>
-  </header>
+  <SiteHeader />
   <main class="inner-page">
     <section class="page-hero"><div class="container"><p class="eyebrow">Start a project</p><h1>Bring the problem. We’ll start with the work.</h1><p class="lede">Tell us what needs to move, improve, repeat, connect, cut, hold, weld, automate, or become a complete system.</p></div></section>
     <section class="section">

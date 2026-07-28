@@ -1,0 +1,36 @@
+---
+const links = [
+  ['/solutions', 'Solutions'],
+  ['/projects', 'Projects'],
+  ['/engineering', 'Engineering'],
+  ['/about', 'About'],
+];
+---
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="LaserX Design home">
+      <span class="brand-mark" aria-hidden="true">X</span>
+      <span class="brand-copy"><strong>LASERX</strong><small>DESIGN</small></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      {links.map(([href, label]) => <a href={href}>{label}</a>)}
+      <a class="nav-cta" href="/contact">Start a project</a>
+    </nav>
+
+    <details class="site-mobilemenu">
+      <summary aria-label="Open navigation"><span></span></summary>
+      <nav class="site-mobilepanel" aria-label="Mobile navigation">
+        {links.map(([href, label]) => <a href={href}>{label}</a>)}
+        <a href="/contact">Start a project</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script is:inline>
+  document.querySelectorAll('.site-mobilemenu').forEach((menu) => {
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => menu.removeAttribute('open')));
+  });
+</script>
