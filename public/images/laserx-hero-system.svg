@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">LaserX Design X Series autonomous manufacturing system</title>
+<desc id="d">A cinematic technical illustration of a CNC plasma table cutting metal with blue light and sparks.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#02060a"/><stop offset=".55" stop-color="#08131d"/><stop offset="1" stop-color="#020509"/></linearGradient>
+  <radialGradient id="glow" cx="72%" cy="54%" r="38%"><stop stop-color="#39bdf8" stop-opacity=".32"/><stop offset="1" stop-color="#39bdf8" stop-opacity="0"/></radialGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9aabb8"/><stop offset=".28" stop-color="#35434f"/><stop offset=".62" stop-color="#111a22"/><stop offset="1" stop-color="#60717e"/></linearGradient>
+  <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1a2733"/><stop offset="1" stop-color="#060b10"/></linearGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="spark"><feGaussianBlur stdDeviation="2"/></filter>
+  <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#49b9f2" stroke-opacity=".08" stroke-width="1"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#grid)"/>
+<rect width="1600" height="900" fill="url(#glow)"/>
+<g opacity=".3" fill="#0c1923"><rect x="760" y="70" width="180" height="210"/><rect x="960" y="105" width="240" height="160"/><rect x="1230" y="40" width="280" height="260"/></g>
+<g transform="translate(520 180)">
+  <polygon points="80,280 780,235 980,355 260,410" fill="#0a1118" stroke="#4b6375" stroke-width="4"/>
+  <polygon points="260,410 980,355 930,655 210,690" fill="url(#panel)" stroke="#182a38" stroke-width="5"/>
+  <polygon points="80,280 260,410 210,690 28,540" fill="#111c25" stroke="#2a3f4f" stroke-width="4"/>
+  <g stroke="#8ea1ad" stroke-width="7" opacity=".72">
+    <path d="M145 310L825 270"/><path d="M175 330L855 290"/><path d="M205 350L885 310"/><path d="M235 370L915 330"/>
+    <path d="M265 390L945 350"/>
+  </g>
+  <g stroke="#c5d1d8" stroke-width="3" opacity=".55">
+    <path d="M140 300L210 395"/><path d="M230 294L300 390"/><path d="M320 288L390 384"/><path d="M410 282L480 378"/><path d="M500 276L570 372"/><path d="M590 270L660 366"/><path d="M680 264L750 360"/><path d="M770 258L840 354"/>
+  </g>
+  <polygon points="30,182 930,130 965,177 60,230" fill="#020508" stroke="#3c5363" stroke-width="5"/>
+  <polygon points="60,230 965,177 953,225 80,275" fill="#101a22"/>
+  <g>
+    <polygon points="520,150 650,143 700,217 560,225" fill="#0f1b24" stroke="#4f6f82" stroke-width="4"/>
+    <rect x="585" y="63" width="42" height="97" rx="5" fill="#111d27" stroke="#5a7c90" stroke-width="4"/>
+    <path d="M605 62V17" stroke="#7391a4" stroke-width="16"/>
+    <path d="M612 15C690 -3 760 22 782 68" fill="none" stroke="#17242e" stroke-width="20"/>
+    <path d="M612 15C690 -3 760 22 782 68" fill="none" stroke="#e0a81f" stroke-width="5" stroke-dasharray="4 16"/>
+    <rect x="626" y="217" width="18" height="66" fill="#111a21"/>
+    <circle cx="635" cy="286" r="20" fill="#75d4ff" opacity=".28" filter="url(#blur)"/>
+    <circle cx="635" cy="286" r="8" fill="#dff7ff"/>
+  </g>
+  <g stroke="#ffb245" stroke-linecap="round">
+    <path d="M638 289l110 26" stroke-width="5"/><path d="M640 291l145 2" stroke-width="4"/><path d="M641 294l103 60" stroke-width="5"/><path d="M640 288l92 -38" stroke-width="3"/><path d="M640 291l172 65" stroke-width="3"/><path d="M639 292l78 88" stroke-width="4"/><path d="M642 289l137 -21" stroke-width="3"/>
+  </g>
+  <g fill="#ffd17a" filter="url(#spark)"><circle cx="755" cy="314" r="4"/><circle cx="785" cy="293" r="3"/><circle cx="744" cy="352" r="4"/><circle cx="812" cy="355" r="3"/><circle cx="712" cy="380" r="3"/></g>
+  <path d="M239 495H860" stroke="#536b7a" stroke-width="3" opacity=".6"/>
+  <g fill="#233542"><circle cx="312" cy="520" r="7"/><circle cx="420" cy="508" r="7"/><circle cx="528" cy="496" r="7"/><circle cx="636" cy="484" r="7"/><circle cx="744" cy="472" r="7"/><circle cx="852" cy="460" r="7"/></g>
+</g>
+<g opacity=".45" stroke="#49b9f2" fill="none"><path d="M100 760H420"/><path d="M100 780H310"/><path d="M100 800H360"/><circle cx="1250" cy="720" r="105"/><circle cx="1250" cy="720" r="72"/><path d="M1145 720h210M1250 615v210"/></g>
+</svg>
