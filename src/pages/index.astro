@@ -1,24 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/home-v2.css';
-import '../styles/image-assets.css';
-import '../styles/photo-assets.css';
 import '../styles/image-elements.css';
 
 const process = [
   ['Discover', 'Define the problem, constraints, interfaces, risk, and measurable outcome.'],
   ['Engineer', 'Develop the mechanical, electrical, controls, fabrication, and integration plan as one system.'],
-  ['Build', 'Cut, fabricate, wire, assemble, test, and document the complete machine or solution.'],
-  ['Integrate', 'Connect, commission, prove, refine, and prepare the system for real production.']
+  ['Build', 'Cut, fabricate, wire, assemble, test, and document the complete solution.'],
+  ['Integrate', 'Connect, commission, prove, refine, and prepare the system for production.']
 ];
 ---
 
-<BaseLayout title="LaserX Design | Engineering Autonomous Systems">
+<BaseLayout title="LaserX Design | Engineering Autonomous Systems" description="LaserX Design turns manufacturing problems into complete working systems through machine design, automation, controls, CAD, precision fabrication, and integration.">
   <div class="lx-home">
     <header class="lx-header">
       <div class="lx-shell lx-nav">
         <a class="lx-brand" href="#top" aria-label="LaserX Design home">
-          <span class="lx-brandmark">X</span>
+          <span class="lx-brandmark" aria-hidden="true">X</span>
           <span class="lx-wordmark"><strong>LASERX</strong><small>DESIGN</small></span>
         </a>
         <nav class="lx-navlinks" aria-label="Primary navigation">
@@ -28,19 +26,30 @@ const process = [
           <a href="/engineering">Engineering</a>
           <a href="/about">About</a>
         </nav>
-        <a class="lx-navcta" href="#contact">Start a project</a>
+        <a class="lx-navcta" href="/contact">Start a project</a>
+        <details class="lx-mobilemenu">
+          <summary aria-label="Open navigation"><span></span></summary>
+          <nav class="lx-mobilepanel" aria-label="Mobile navigation">
+            <a href="#work">Selected work</a>
+            <a href="#process">Our process</a>
+            <a href="/projects">Projects</a>
+            <a href="/engineering">Engineering</a>
+            <a href="/about">About</a>
+            <a href="/contact">Start a project</a>
+          </nav>
+        </details>
       </div>
     </header>
 
     <main id="top">
       <section class="lx-hero">
-        <img class="lx-hero-media" src="/13CB4D59-3842-4CEF-A2A6-A18513B6B14A.png?v=8" alt="LaserX Design CNC plasma system in an industrial workshop" fetchpriority="high" />
+        <img class="lx-hero-media" src="/13CB4D59-3842-4CEF-A2A6-A18513B6B14A.png" alt="LaserX Design CNC plasma system in an industrial workshop" width="1536" height="1024" fetchpriority="high" decoding="async" />
         <div class="lx-shell lx-heroinner">
           <p class="lx-kicker">Design · Build · Integrate · Automate</p>
           <h1 class="lx-title">Engineering autonomous systems.</h1>
-          <p class="lx-copy">LaserX Design turns manufacturing problems into complete working systems—from CAD and controls through precision cutting, fabrication, wiring, integration, and commissioning.</p>
+          <p class="lx-copy">Complete industrial solutions—from CAD and controls through cutting, fabrication, wiring, integration, and commissioning.</p>
           <div class="lx-actions">
-            <a class="lx-btn lx-btn-primary" href="#contact">Start a project ↗</a>
+            <a class="lx-btn lx-btn-primary" href="/contact">Start a project ↗</a>
             <a class="lx-btn" href="#work">Explore the work</a>
           </div>
           <div class="lx-disciplines" aria-label="Core disciplines">
@@ -49,54 +58,54 @@ const process = [
         </div>
       </section>
 
-      <section class="lx-intro">
+      <section class="lx-intro reveal">
         <div class="lx-shell lx-introgrid">
           <p class="lx-sectionlabel">What we build</p>
           <div>
             <h2>Not another fabrication shop.<em>A complete design-and-build partner.</em></h2>
-            <p>Mechanics, controls, fabrication, wiring, software interfaces, and operator workflow are treated as one connected system. The result is equipment that is practical to run, maintain, improve, and trust.</p>
+            <p>Mechanics, controls, fabrication, wiring, software interfaces, and operator workflow are engineered as one connected system.</p>
           </div>
         </div>
       </section>
 
-      <section class="lx-showcase" id="work">
+      <section class="lx-showcase reveal" id="work">
         <div class="lx-shell">
           <div class="lx-showcasehead">
             <div><p class="lx-sectionlabel">Selected engineering</p><h2>Idea to implementation.</h2></div>
-            <p>Real machines, fixtures, controls, and manufacturing systems carried from the first model through the shop floor.</p>
+            <p>Real machines, tooling, controls, and manufacturing systems carried from the first model through the shop floor.</p>
           </div>
           <div class="lx-gallery">
-            <article class="lx-card">
-              <img class="lx-card-image" src="/2FC904B8-CA3E-4159-8B2E-6A816ADCB04D.png?v=8" alt="X Series 1 CNC plasma table" loading="lazy" />
-              <div class="lx-cardmeta"><span class="lx-cardnum">01 / FLAGSHIP SYSTEM</span><h3>X Series 1 CNC Plasma Table</h3><p>Mechanical design, motion, water table, controls, wiring, fabrication, assembly, and software brought together as one machine.</p></div>
-            </article>
-            <article class="lx-card">
-              <img class="lx-card-image" src="/58F0A4CD-CD94-49A0-9EBA-BB088130C953.png?v=8" alt="Production fixture engineering" loading="lazy" />
-              <div class="lx-cardmeta"><span class="lx-cardnum">02 / PRODUCTION ENGINEERING</span><h3>Fixture Systems</h3><p>CAD-designed tooling developed for repeatability, access, dimensional control, and production flow.</p></div>
-            </article>
-            <article class="lx-card">
-              <img class="lx-card-image" src="/6096E2F0-06DE-4820-8FDD-A59169C2DFB2.png?v=8" alt="Machine controls and wiring integration" loading="lazy" />
+            <a class="lx-card" href="/projects/cnc-plasma-table" aria-label="View X Series 1 CNC plasma table project">
+              <img class="lx-card-image" src="/2FC904B8-CA3E-4159-8B2E-6A816ADCB04D.png" alt="X Series 1 CNC plasma table" width="1536" height="1024" loading="lazy" decoding="async" />
+              <div class="lx-cardmeta"><span class="lx-cardnum">01 / FLAGSHIP SYSTEM</span><h3>X Series 1 CNC Plasma Table</h3><p>Mechanical design, motion, water table, controls, wiring, fabrication, assembly, and software—one complete machine.</p></div>
+            </a>
+            <a class="lx-card" href="/projects" aria-label="View fixture system projects">
+              <img class="lx-card-image" src="/58F0A4CD-CD94-49A0-9EBA-BB088130C953.png" alt="Production fixture engineering" width="1536" height="1024" loading="lazy" decoding="async" />
+              <div class="lx-cardmeta"><span class="lx-cardnum">02 / PRODUCTION ENGINEERING</span><h3>Fixture Systems</h3><p>CAD-designed tooling for repeatability, access, dimensional control, and production flow.</p></div>
+            </a>
+            <a class="lx-card" href="/engineering" aria-label="Explore controls and machine integration">
+              <img class="lx-card-image" src="/6096E2F0-06DE-4820-8FDD-A59169C2DFB2.png" alt="Machine controls and wiring integration" width="1536" height="1024" loading="lazy" decoding="async" />
               <div class="lx-cardmeta"><span class="lx-cardnum">03 / CONTROLS</span><h3>Machine Integration</h3><p>Motion hardware, controllers, power, wiring, sensors, networking, testing, and commissioning.</p></div>
-            </article>
+            </a>
           </div>
         </div>
       </section>
 
-      <section class="lx-story">
+      <section class="lx-story reveal">
         <div class="lx-shell lx-storygrid">
           <div class="lx-storycopy">
             <p class="lx-sectionlabel">Flagship project / X Series 1</p>
             <h2>CAD became a working machine.</h2>
-            <p>The plasma table is the proof: structure, gantry, motion, water table, controls, wiring, fabrication, finishing, and ongoing software development designed as one complete system.</p>
+            <p>The plasma table proves the full path: structure, gantry, motion, water table, controls, wiring, fabrication, finishing, and software development.</p>
             <div class="lx-sequence"><span>CAD</span><span>Build</span><span>Wire</span><span>Run</span></div>
           </div>
           <a class="lx-machine" href="/projects/cnc-plasma-table" aria-label="View the X Series 1 CNC plasma table case study">
-            <img class="lx-machine-image" src="/6B4EFBD5-31C5-473D-A038-4B297BBC45AF.png?v=8" alt="CAD-to-machine development of the X Series CNC plasma table" loading="lazy" />
+            <img class="lx-machine-image" src="/6B4EFBD5-31C5-473D-A038-4B297BBC45AF.png" alt="CAD-to-machine development of the X Series CNC plasma table" width="1536" height="1024" loading="lazy" decoding="async" />
           </a>
         </div>
       </section>
 
-      <section class="lx-process" id="process">
+      <section class="lx-process reveal" id="process">
         <div class="lx-shell">
           <p class="lx-sectionlabel">From idea to implementation</p>
           <h2>One system. One owner. Clear responsibility.</h2>
@@ -108,7 +117,7 @@ const process = [
         </div>
       </section>
 
-      <section class="lx-proof">
+      <section class="lx-proof reveal">
         <div class="lx-shell lx-proofgrid">
           <div class="lx-proofitem"><strong>200K+</strong><span>parts produced through proven fixture systems</span></div>
           <div class="lx-proofitem"><strong>8×</strong><span>documented production-output improvement</span></div>
@@ -117,12 +126,12 @@ const process = [
         </div>
       </section>
 
-      <section class="lx-final" id="contact">
+      <section class="lx-final reveal" id="contact">
         <div class="lx-shell">
           <p class="lx-sectionlabel">Have a machine, process, or manufacturing problem?</p>
           <h2>Build what the process actually needs.</h2>
-          <p>Bring the bottleneck, damaged machine, manual process, custom equipment idea, or impossible part. We start by understanding the work.</p>
-          <div class="lx-actions"><a class="lx-btn lx-btn-primary" href="mailto:hello@laserxdesign.com">Start a conversation ↗</a></div>
+          <p>Bring the bottleneck, manual process, damaged machine, custom-equipment idea, or impossible part.</p>
+          <div class="lx-actions"><a class="lx-btn lx-btn-primary" href="/contact">Start a project ↗</a></div>
         </div>
       </section>
     </main>
@@ -135,4 +144,23 @@ const process = [
       </div>
     </footer>
   </div>
+
+  <script is:inline>
+    const menu = document.querySelector('.lx-mobilemenu');
+    menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => menu.removeAttribute('open')));
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach((item) => observer.observe(item));
+    } else {
+      items.forEach((item) => item.classList.add('is-visible'));
+    }
+  </script>
 </BaseLayout>
