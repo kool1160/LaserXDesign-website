@@ -1,0 +1,10 @@
+.case-hero { min-height: 82svh; display: grid; align-items: end; padding: 11rem 0 6rem; position: relative; overflow: hidden; background: radial-gradient(circle at 75% 35%, rgba(73,185,242,.16), transparent 32%), linear-gradient(90deg, rgba(4,9,14,.97), rgba(4,9,14,.58)), url('/images/hero-placeholder.svg') center/cover no-repeat; }
+.case-hero::after { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(73,185,242,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(73,185,242,.1) 1px, transparent 1px); background-size: 84px 84px; mask-image: linear-gradient(to right, #000, transparent); }
+.case-hero .container { position: relative; z-index: 1; }
+.case-hero h1 { max-width: 1000px; }
+.case-overview { padding: 8rem 0; background: #e8edf1; color: #09131d; }
+.case-overview-grid { display: grid; grid-template-columns: 1fr .85fr; gap: clamp(3rem, 8vw, 8rem); }
+.case-overview h2 { margin: 0; font-size: clamp(2.8rem, 5vw, 5.8rem); line-height: .94; letter-spacing: -.055em; }
+.case-overview-grid > div:last-child > p { margin-top: 0; color: #43515e; font-size: 1.08rem; line-height: 1.75; }
+.case-disciplines { background: linear-gradient(180deg, #0b1622, #071019); }
+@media (max-width: 800px) { .case-hero { min-height: 72svh; padding: 9rem 0 4rem; } .case-overview { padding: 5rem 0; } .case-overview-grid { grid-template-columns: 1fr; } }
