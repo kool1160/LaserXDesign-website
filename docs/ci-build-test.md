@@ -1,1 +1,1 @@
-Temporary build-validation trigger. This file can be removed after the Astro build check passes.
+Temporary build-validation trigger. Updated after CI workflow repair; remove after the Astro build passes.
