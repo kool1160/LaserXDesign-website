@@ -1,1 +1,22 @@
-.brand-mark,.brand-copy,.lx-brandmark,.lx-wordmark{display:none!important}.brand,.lx-brand{display:block!important;flex:0 0 auto;line-height:0}.brand::before,.lx-brand::before{content:"";display:block;width:132px;aspect-ratio:560/330;background:url('/images/brand/laserx-design-stacked.svg') center/contain no-repeat}.site-header .nav,.lx-header .lx-nav{min-height:90px}.brand:focus-visible,.lx-brand:focus-visible{outline:2px solid #49b9f2;outline-offset:5px}@media(max-width:759px){.brand::before,.lx-brand::before{width:108px}.site-header .nav,.lx-header .lx-nav{min-height:76px}}@media(max-width:390px){.brand::before,.lx-brand::before{width:96px}.site-header .nav,.lx-header .lx-nav{min-height:72px}}
+.brand-mark,.brand-copy,.lx-brandmark,.lx-wordmark{display:none!important}
+.brand,.lx-brand{display:block!important;flex:0 0 auto;line-height:0}
+.brand::before,.lx-brand::before{
+  content:"";
+  display:block;
+  width:156px;
+  height:82px;
+  background-image:url('/images/522FBBAC-647C-4C48-9538-0F84B36B2922.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:156px 156px;
+}
+.site-header .nav,.lx-header .lx-nav{min-height:96px}
+.brand:focus-visible,.lx-brand:focus-visible{outline:2px solid #49b9f2;outline-offset:5px}
+@media(max-width:759px){
+  .brand::before,.lx-brand::before{width:126px;height:68px;background-size:126px 126px}
+  .site-header .nav,.lx-header .lx-nav{min-height:80px}
+}
+@media(max-width:390px){
+  .brand::before,.lx-brand::before{width:112px;height:62px;background-size:112px 112px}
+  .site-header .nav,.lx-header .lx-nav{min-height:76px}
+}
