@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 330" role="img" aria-labelledby="title desc">
+  <title id="title">Laser X Design</title>
+  <desc id="desc">Stacked Laser X Design logo in steel gray and electric blue.</desc>
+  <defs>
+    <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1f4f6"/>
+      <stop offset="0.52" stop-color="#9aa6ae"/>
+      <stop offset="1" stop-color="#59656e"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#59c8ff"/>
+      <stop offset="0.48" stop-color="#10aeea"/>
+      <stop offset="1" stop-color="#0878b4"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000" flood-opacity=".65"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <text x="280" y="90" text-anchor="middle" fill="url(#steel)" stroke="#111a21" stroke-width="2" paint-order="stroke" font-family="Arial Black, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="2">LASER</text>
+    <path d="M25 190H178" stroke="#26333d" stroke-width="20" stroke-linecap="square"/>
+    <path d="M25 190H178" stroke="url(#blue)" stroke-width="8" stroke-linecap="square"/>
+    <path d="M382 190H535" stroke="#26333d" stroke-width="20" stroke-linecap="square"/>
+    <path d="M382 190H535" stroke="url(#blue)" stroke-width="8" stroke-linecap="square"/>
+    <path d="M190 122L370 258" stroke="#26333d" stroke-width="62" stroke-linecap="square"/>
+    <path d="M370 122L190 258" stroke="#26333d" stroke-width="62" stroke-linecap="square"/>
+    <path d="M190 122L370 258" stroke="url(#blue)" stroke-width="32" stroke-linecap="square"/>
+    <path d="M370 122L190 258" stroke="url(#blue)" stroke-width="32" stroke-linecap="square"/>
+    <path d="M190 122L370 258" stroke="#b9e9ff" stroke-width="4" stroke-linecap="square" opacity=".75"/>
+    <path d="M370 122L190 258" stroke="#b9e9ff" stroke-width="4" stroke-linecap="square" opacity=".75"/>
+    <text x="280" y="326" text-anchor="middle" fill="url(#steel)" stroke="#111a21" stroke-width="2" paint-order="stroke" font-family="Arial Black, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="1">DESIGN</text>
+  </g>
+</svg>
