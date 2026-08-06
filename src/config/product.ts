@@ -2,6 +2,14 @@ export type ReleaseState = 'development' | 'private-beta' | 'public-beta' | 'tri
 
 export const releaseState: ReleaseState = 'development';
 
+export const releaseLabels: Record<ReleaseState, string> = {
+  development: 'In development',
+  'private-beta': 'Private beta',
+  'public-beta': 'Public beta',
+  trial: 'Public trial',
+  released: 'Released',
+};
+
 export const releaseCtas: Record<ReleaseState, { primary: string; primaryHref: string; secondary: string; secondaryHref: string }> = {
   development: {
     primary: 'See how LaserX works',
@@ -36,6 +44,7 @@ export const releaseCtas: Record<ReleaseState, { primary: string; primaryHref: s
 };
 
 export const currentCtas = releaseCtas[releaseState];
+export const currentReleaseLabel = releaseLabels[releaseState];
 
 export const pricing = {
   trialDays: 14,
@@ -50,6 +59,7 @@ export const product = {
   shortName: 'LaserX',
   platform: 'Windows',
   positioning: 'From idea to cut-ready design.',
+  distinction: 'LaserX creates the product. Your machine software cuts it.',
   description:
     'LaserX Design Studio helps makers create, import, repair, physically preview, and export flat-cut signs and layered products for the machine software they already use.',
 };
