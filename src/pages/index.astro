@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProductHeader from '../components/ProductHeader.astro';
-import { currentCtas, pricing, releaseState } from '../config/product';
+import { currentCtas, currentReleaseLabel, pricing, product, releaseState } from '../config/product';
 import '../styles/design-studio.css';
 
 const startPaths = [
@@ -10,7 +10,7 @@ const startPaths = [
   ['03', 'Describe what I want', 'Optional AI can help with ideas and concepts. LaserX still turns the result into editable, checked geometry.'],
 ];
 
-const makerSteps = ['Create', 'Import', 'Trace', 'Repair', 'Layer', 'Preview', 'Export'];
+const workflow = ['Create', 'Check', 'Layer', 'Preview', 'Export'];
 ---
 
 <BaseLayout>
@@ -22,35 +22,47 @@ const makerSteps = ['Create', 'Import', 'Trace', 'Repair', 'Layer', 'Preview', '
         <div class="ds-hero-grid" aria-hidden="true"></div>
         <div class="ds-shell ds-hero-layout">
           <div class="ds-hero-copy">
-            <p class="ds-eyebrow">LaserX Design Studio · Windows-first · In development</p>
+            <div class="ds-statusline"><span class="ds-statusdot"></span><strong>{currentReleaseLabel}</strong><span>Windows desktop</span></div>
+            <p class="ds-eyebrow">LaserX Design Studio</p>
             <h1>From idea to <span>cut-ready design.</span></h1>
             <p class="ds-hero-lede">Create, import, repair, layer, physically preview, and export signs and flat-cut products—without replacing the software that already runs your machine.</p>
             <div class="ds-actions">
-              <a class="ds-button ds-button-primary" href={currentCtas.primaryHref}>{currentCtas.primary} <span>↗</span></a>
-              <a class="ds-button ds-button-secondary" href={currentCtas.secondaryHref}>{currentCtas.secondary}</a>
+              <a class="ds-button ds-button-primary" href={currentCtas.primaryHref}>{currentCtas.primary}<span aria-hidden="true">↗</span></a>
+              <a class="ds-button ds-button-secondary" href="#three-d">See the 3D story</a>
             </div>
             <div class="ds-proofline" aria-label="Product positioning">
-              <span>No AI required</span><span>Machine-independent workflow</span><span>Windows desktop</span>
+              <span>No AI required</span>
+              <span>Machine-independent workflow</span>
+              <span>Exact SVG / DXF handoff</span>
             </div>
           </div>
 
-          <div class="ds-product-visual" aria-label="Illustration of the LaserX Design Studio workflow">
-            <div class="ds-windowbar"><span></span><span></span><span></span><strong>LASERX DESIGN STUDIO</strong></div>
-            <div class="ds-workspace">
-              <div class="ds-workflow-rail">
-                {makerSteps.map((step, index) => <span class={index === 5 ? 'active' : ''}>{step}</span>)}
-              </div>
-              <div class="ds-stage">
-                <div class="ds-stage-meta"><span>PHYSICAL PREVIEW</span><strong>24.000 in × 9.500 in</strong></div>
-                <div class="ds-sign-object" aria-hidden="true">
-                  <span class="layer back"></span>
-                  <span class="layer mid"></span>
-                  <span class="layer face"><b>IRON + OAK</b></span>
+          <div class="ds-product-visual" aria-label="Conceptual illustration of the LaserX Design Studio product workflow">
+            <div class="ds-instrument-top">
+              <div><b>LASERX</b><span>DESIGN STUDIO</span></div>
+              <small>PRODUCT WORKFLOW / CONCEPT</small>
+            </div>
+            <div class="ds-instrument-body">
+              <div class="ds-ruler ds-ruler-x" aria-hidden="true"></div>
+              <div class="ds-ruler ds-ruler-y" aria-hidden="true"></div>
+              <div class="ds-geometry-stage">
+                <span class="ds-dimension ds-dimension-x">24.000 IN</span>
+                <span class="ds-dimension ds-dimension-y">9.500 IN</span>
+                <div class="ds-layer-stack" aria-hidden="true">
+                  <span class="ds-plate ds-plate-back"></span>
+                  <span class="ds-plate ds-plate-mid"></span>
+                  <span class="ds-plate ds-plate-face"><b>NORTH<br />SHORE</b></span>
                 </div>
-                <div class="ds-stage-footer"><span>3 layers</span><span>Real thickness</span><span>Assembled / Exploded</span></div>
+                <div class="ds-crosshair" aria-hidden="true"></div>
+              </div>
+              <div class="ds-workflow-track" aria-label="LaserX workflow">
+                {workflow.map((step, index) => <span class={index === 3 ? 'active' : ''}><i>{String(index + 1).padStart(2, '0')}</i>{step}</span>)}
               </div>
             </div>
-            <p class="ds-visual-note">Product workflow illustration · real application media will replace this before public launch.</p>
+            <div class="ds-instrument-bottom">
+              <span>EDITABLE GEOMETRY</span><span>PHYSICAL LAYERS</span><span>REVIEWED EXPORT</span>
+            </div>
+            <p class="ds-visual-note">Conceptual product workflow illustration. Real application media replaces concept art before public launch.</p>
           </div>
         </div>
       </section>
@@ -66,20 +78,23 @@ const makerSteps = ['Create', 'Import', 'Trace', 'Repair', 'Layer', 'Preview', '
             <p><strong>LaserX compresses that front-end work into one guided path.</strong></p>
           </div>
         </div>
-        <div class="ds-shell ds-compare">
-          <article class="ds-compare-card before"><span>Before LaserX</span><strong>Idea → five different tools → mystery geometry → backtracking</strong><div class="mess-lines"><i></i><i></i><i></i><i></i><i></i></div></article>
-          <div class="ds-compare-arrow">→</div>
-          <article class="ds-compare-card after"><span>With LaserX</span><strong>Idea → guided manufacturing prep → reviewed export</strong><div class="clean-flow"><i>Create</i><i>Fix</i><i>3D</i><i>Export</i></div></article>
+        <div class="ds-shell ds-before-after">
+          <div class="ds-before-after-label"><span>WITHOUT</span><strong>Five tools. Mystery geometry. Backtracking.</strong></div>
+          <div class="ds-cutline" aria-hidden="true"><i></i></div>
+          <div class="ds-before-after-label right"><span>WITH LASERX</span><strong>One path from idea to reviewed export.</strong></div>
         </div>
       </section>
 
       <section class="ds-start">
         <div class="ds-shell">
-          <div class="ds-section-head"><p class="ds-eyebrow">Start wherever you are</p><h2>Own the machine. <span>Start with what you have.</span></h2></div>
+          <div class="ds-section-head">
+            <p class="ds-eyebrow">Start wherever you are</p>
+            <h2>Own the machine. <span>Start with what you have.</span></h2>
+          </div>
           <div class="ds-path-grid">
             {startPaths.map(([number, title, description], index) => (
               <article class="ds-path-card">
-                <span class="ds-cardnum">{number}</span>
+                <div class="ds-path-top"><span class="ds-cardnum">{number}</span><span aria-hidden="true">↗</span></div>
                 <div class="ds-path-icon" aria-hidden="true">{index === 0 ? 'Aa' : index === 1 ? '⌁' : '✦'}</div>
                 <h3>{title}</h3>
                 <p>{description}</p>
@@ -90,88 +105,135 @@ const makerSteps = ['Create', 'Import', 'Trace', 'Repair', 'Layer', 'Preview', '
         </div>
       </section>
 
-      <section class="ds-repair">
+      <section class="ds-repair" id="manufacturing-repair">
         <div class="ds-shell ds-repair-grid">
           <div class="ds-repair-copy">
             <p class="ds-eyebrow">Manufacturing repair</p>
             <h2>Catch the problems <span>before they become scrap.</span></h2>
             <p>Open contours. Loose islands. Duplicates. Overlaps. Fragile details. LaserX groups the useful decisions instead of burying you in raw geometry errors.</p>
-            <a class="ds-textlink" href="#workflows">See the manufacturing workflow ↗</a>
+            <p class="ds-plainspoken">Your DXF can look fine and still be a mess to manufacture.</p>
           </div>
-          <div class="ds-repair-panel" aria-label="Illustration of grouped manufacturing repair">
-            <div class="ds-findings"><span>ANALYSIS</span><strong>1,905</strong><small>findings</small></div>
-            <div class="ds-repair-action"><button type="button" tabindex="-1">Fix safe problems</button><span>Deterministic · previewable · undoable</span></div>
-            <div class="ds-decisions"><span>REVIEW</span><strong>6</strong><small>decisions remain</small></div>
+          <div class="ds-repair-panel" aria-label="Example of grouped manufacturing repair">
+            <div class="ds-repair-caption"><span>EXAMPLE REPAIR FLOW</span><small>Grouped decisions, not a wall of warnings</small></div>
+            <div class="ds-repair-metrics">
+              <div><span>FINDINGS</span><strong>1,905</strong><small>detected</small></div>
+              <div class="ds-repair-action"><span>PRIMARY ACTION</span><b>Fix safe problems</b><small>previewable · undoable</small></div>
+              <div><span>REVIEW</span><strong>6</strong><small>decisions remain</small></div>
+            </div>
+            <div class="ds-repair-bar"><i></i><span>1,899 safe problems resolved in the example</span></div>
           </div>
         </div>
       </section>
 
       <section class="ds-three" id="three-d">
         <div class="ds-shell ds-three-grid">
-          <div class="ds-three-visual" aria-label="Illustration of a layered sign in exploded 3D view">
+          <div class="ds-three-visual" aria-label="Conceptual exploded physical preview of a layered sign">
+            <div class="ds-three-label"><span>PHYSICAL PREVIEW</span><strong>EXPLODED VIEW</strong></div>
             <div class="ds-exploded-sign" aria-hidden="true">
-              <span class="plate plate-1"></span>
-              <span class="plate plate-2"></span>
-              <span class="plate plate-3"><b>IRON + OAK</b></span>
+              <span class="ds-3dplate ds-3dplate-1"></span>
+              <span class="ds-3dplate ds-3dplate-2"></span>
+              <span class="ds-3dplate ds-3dplate-3"><b>NORTH SHORE</b></span>
             </div>
-            <div class="ds-three-controls"><span>Assembled</span><span class="selected">Exploded</span><span>Front</span><span>Edge</span></div>
+            <div class="ds-three-specs"><span>3 LAYERS</span><span>REAL THICKNESS</span><span>ACTUAL CUTOUTS</span></div>
           </div>
           <div class="ds-three-copy">
-            <p class="ds-eyebrow">Physical 3D preview</p>
+            <p class="ds-eyebrow ds-eyebrow-dark">Physical 3D preview</p>
             <h2>See the sign <span>before you cut it.</span></h2>
-            <p>Real manufacturing geometry. Real holes and cutouts. Real layer order and thickness. Orbit it, explode it, look at the edge, hide a layer, and understand what you are actually about to build.</p>
-            <div class="ds-feature-list"><span>Actual geometry</span><span>Exact thickness</span><span>Assembled / exploded</span><span>Front / back / edge / perspective</span></div>
+            <p>LaserX turns the same manufacturing geometry into a physical preview with real layer order, thickness, holes, and cutouts. Spin it around. Explode the layers. Look at the edge. Understand the object before material hits the table.</p>
+            <div class="ds-feature-list"><span>Assembled / exploded</span><span>Front / back / edge / perspective</span><span>Orbit / pan / zoom</span><span>Layer visibility</span></div>
+            <p class="ds-three-truth">The preview is derived from the design. It does not secretly “fix” or change it.</p>
           </div>
         </div>
       </section>
 
       <section class="ds-workflows" id="workflows">
         <div class="ds-shell">
-          <div class="ds-section-head"><p class="ds-eyebrow">Companion workflow</p><h2>Keep the software that <span>already runs your machine.</span></h2><p>LaserX handles the product before it gets there.</p></div>
+          <div class="ds-section-head ds-section-head-centered">
+            <p class="ds-eyebrow">Companion workflow</p>
+            <h2>Keep the software that <span>already runs your machine.</span></h2>
+            <p>LaserX handles the product before it gets there.</p>
+          </div>
           <div class="ds-flow">
             <div class="ds-flowbox"><span>START WITH</span><strong>Idea · Image · SVG · DXF</strong></div>
-            <i>→</i>
-            <div class="ds-flowbox core"><span>LASERX DESIGN STUDIO</span><strong>Create → Fix → Layer → Preview → Export</strong></div>
-            <i>→</i>
+            <i aria-hidden="true">→</i>
+            <div class="ds-flowbox core"><span>LASERX DESIGN STUDIO</span><strong>Create · Fix · Layer · Preview · Export</strong></div>
+            <i aria-hidden="true">→</i>
             <div class="ds-flowbox"><span>DOWNSTREAM</span><strong>Vector editor · Laser software · CAM workflow</strong></div>
-            <i>→</i>
-            <div class="ds-flowbox"><span>YOUR EQUIPMENT</span><strong>Laser · Plasma · Router · Waterjet · Flat-cut machine</strong></div>
+            <i aria-hidden="true">→</i>
+            <div class="ds-flowbox"><span>YOUR EQUIPMENT</span><strong>Flat-cut machine</strong></div>
           </div>
-          <p class="ds-companion-line"><strong>LaserX creates the product.</strong> Your machine software cuts it.</p>
+          <p class="ds-companion-line"><strong>{product.distinction}</strong></p>
+          <p class="ds-companion-note">Designed to work alongside downstream tools—not pretend to replace them or control the machine.</p>
         </div>
       </section>
 
       <section class="ds-ai">
         <div class="ds-shell ds-ai-grid">
-          <div class="ds-ai-main"><p class="ds-eyebrow ds-eyebrow-dark">Works without AI</p><h2>You don’t need AI <span>to make a sign.</span></h2><p>Text, shapes, templates, borders, backing plates, holes, imports, tracing, repair, physical layers, 3D preview, saving, and export belong to LaserX itself.</p></div>
-          <aside class="ds-ai-card"><span>OPTIONAL</span><strong>Need an idea?</strong><p>Connect your own supported AI account for concepts, wording help, variations, or reference-image assistance.</p><small>AI gives LaserX an idea. LaserX still makes it editable and runs the same manufacturing checks.</small></aside>
+          <div class="ds-ai-main">
+            <p class="ds-eyebrow ds-eyebrow-dark">Works without AI</p>
+            <h2>You don’t need AI <span>to make a sign.</span></h2>
+            <p>Text, shapes, templates, borders, backing plates, holes, imports, tracing, repair, physical layers, 3D preview, saving, and export belong to LaserX itself.</p>
+          </div>
+          <aside class="ds-ai-card">
+            <span>OPTIONAL</span>
+            <strong>Need an idea?</strong>
+            <p>Connect your own supported AI account for concepts, wording help, variations, or reference-image assistance.</p>
+            <small>AI gives LaserX an idea. LaserX still makes it editable and runs the same manufacturing checks.</small>
+          </aside>
         </div>
       </section>
 
       <section class="ds-origin" id="origin">
         <div class="ds-shell">
-          <div class="ds-origin-head"><div><p class="ds-eyebrow">Built for people who make things</p><h2>Built from real <span>fabrication frustration.</span></h2></div><p>LaserX started with a simple problem: cutting the part could take less time than preparing the damn file.</p></div>
-          <div class="ds-origin-gallery">
-            <figure class="wide"><img src="/images/projects/x-series-1/x-series-feature.png" alt="LaserX Design X Series CNC plasma table" loading="lazy" decoding="async" /><figcaption>Machine built from the ground up</figcaption></figure>
-            <figure><img src="/images/projects/x-series-1/cad-to-machine.png" alt="CAD-to-machine development work" loading="lazy" decoding="async" /><figcaption>CAD carried into the physical build</figcaption></figure>
-            <figure><img src="/images/capabilities/fixtures/fixture-systems.png" alt="Production fixture engineering" loading="lazy" decoding="async" /><figcaption>Fixtures, repeatability, production reality</figcaption></figure>
+          <div class="ds-origin-head">
+            <div><p class="ds-eyebrow">Built for people who make things</p><h2>Built from real <span>fabrication frustration.</span></h2></div>
+            <p>LaserX started with a simple problem: cutting the part could take less time than preparing the damn file.</p>
           </div>
-          <p class="ds-origin-copy">The product is deep underneath because the problems are real. The experience on top should still feel obvious.</p>
+          <div class="ds-origin-gallery">
+            <figure class="wide"><img src="/images/projects/x-series-1/x-series-feature.png" alt="LaserX Design X Series CNC plasma table" loading="lazy" decoding="async" /><figcaption><span>01</span>Machine built from the ground up</figcaption></figure>
+            <figure><img src="/images/projects/x-series-1/cad-to-machine.png" alt="CAD-to-machine development work" loading="lazy" decoding="async" /><figcaption><span>02</span>CAD carried into the physical build</figcaption></figure>
+            <figure><img src="/images/capabilities/fixtures/fixture-systems.png" alt="Production fixture engineering" loading="lazy" decoding="async" /><figcaption><span>03</span>Fixtures, repeatability, production reality</figcaption></figure>
+          </div>
+          <p class="ds-origin-copy">The engineering underneath is deep because the problems are real. The experience on top should still feel obvious.</p>
         </div>
       </section>
 
-      <section class="ds-pricing">
+      <section class="ds-pricing" id="pricing">
         <div class="ds-shell ds-pricing-grid">
-          <div><p class="ds-eyebrow">Pricing philosophy</p><h2>Premium software. <span>Generous price.</span></h2><p>LaserX is being built for makers, not enterprise procurement departments. The release plan favors a full-product evaluation instead of crippled demos and pricing games.</p></div>
-          <div class="ds-price-card"><span>CURRENT STATUS</span><strong>{releaseState === 'development' ? 'In development' : 'Release program active'}</strong><p>{pricing.founderPrice === null ? 'Final public pricing is not published yet.' : `Founder pricing: $${pricing.founderPrice}`}</p><small>Planned trial philosophy: {pricing.trialDays} days · no credit card required · no watermark destroying exports.</small><a class="ds-button ds-button-primary" href={currentCtas.secondaryHref}>{currentCtas.secondary}</a></div>
+          <div>
+            <p class="ds-eyebrow">Pricing philosophy</p>
+            <h2>Premium software. <span>Generous price.</span></h2>
+            <p>LaserX is being built for makers, not enterprise procurement departments. The direction is a real full-product evaluation—not a crippled demo or a maze of tiers.</p>
+          </div>
+          <div class="ds-price-card">
+            <span>CURRENT STATUS</span>
+            <strong>{currentReleaseLabel}</strong>
+            <p>{pricing.founderPrice === null ? 'Final public pricing is not published yet.' : `Founder pricing: $${pricing.founderPrice}`}</p>
+            <ul><li>No public Buy button before the release gate says so.</li><li>No fake public download.</li><li>Release-state CTAs update from one source.</li></ul>
+            <a class="ds-button ds-button-primary" href={currentCtas.secondaryHref}>{currentCtas.secondary}</a>
+          </div>
         </div>
       </section>
 
       <section class="ds-final">
-        <div class="ds-shell"><p class="ds-eyebrow">LaserX Design Studio</p><h2>Spend your time <span>making the sign.</span></h2><div class="ds-actions ds-actions-center"><a class="ds-button ds-button-primary" href={currentCtas.primaryHref}>{currentCtas.primary} <span>↗</span></a><a class="ds-button ds-button-secondary" href={currentCtas.secondaryHref}>{currentCtas.secondary}</a></div></div>
+        <div class="ds-shell">
+          <p class="ds-eyebrow">LaserX Design Studio · {releaseState === 'development' ? 'Development preview' : currentReleaseLabel}</p>
+          <h2>Spend your time <span>making the sign.</span></h2>
+          <p>Less fighting with preparation. More time turning an idea into something real.</p>
+          <div class="ds-actions ds-actions-center">
+            <a class="ds-button ds-button-primary" href={currentCtas.primaryHref}>{currentCtas.primary}<span aria-hidden="true">↗</span></a>
+            <a class="ds-button ds-button-secondary" href={currentCtas.secondaryHref}>{currentCtas.secondary}</a>
+          </div>
+        </div>
       </section>
     </main>
 
-    <footer class="ds-footer"><div class="ds-shell ds-footer-grid"><div><strong>LASERX DESIGN STUDIO</strong><p>LaserX creates the product. Your machine software cuts it.</p></div><div>Windows-first · Machine-independent flat-cut design workflow</div><div>© {new Date().getFullYear()} LaserX Design</div></div></footer>
+    <footer class="ds-footer">
+      <div class="ds-shell ds-footer-grid">
+        <div><strong>LASERX DESIGN STUDIO</strong><p>{product.distinction}</p></div>
+        <div>Windows-first · Machine-independent flat-cut design workflow</div>
+        <div>© {new Date().getFullYear()} LaserX Design</div>
+      </div>
+    </footer>
   </div>
 </BaseLayout>
