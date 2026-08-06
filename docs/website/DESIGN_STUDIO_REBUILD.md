@@ -45,6 +45,8 @@ This branch intentionally starts with one reviewable slice:
 
 It does **not** attempt to rebuild every route yet.
 
+Draft PR #2 is the visual-review boundary for this first slice. Do not merge it until the owner approves the new direction.
+
 ## Media rule
 
 The first homepage uses a deliberately abstract product-workflow illustration rather than fabricated application screenshots. Before public launch, replace product illustrations with screenshots/video captured from an exact current Windows build.
