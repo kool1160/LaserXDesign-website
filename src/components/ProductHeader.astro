@@ -1,0 +1,41 @@
+---
+import { currentCtas } from '../config/product';
+
+const links = [
+  ['#product', 'Product'],
+  ['#how-it-works', 'How It Works'],
+  ['#three-d', '3D Preview'],
+  ['#workflows', 'Workflows'],
+  ['#pricing', 'Pricing'],
+  ['#origin', 'About'],
+];
+---
+
+<header class="ds-header">
+  <div class="ds-shell ds-nav">
+    <a class="ds-brand" href="#top" aria-label="LaserX Design Studio home">
+      <span class="ds-brand-logo" aria-hidden="true"></span>
+      <span class="ds-brand-product">Design Studio</span>
+    </a>
+
+    <nav class="ds-navlinks" aria-label="Primary navigation">
+      {links.map(([href, label]) => <a href={href}>{label}</a>)}
+    </nav>
+
+    <a class="ds-navcta" href={currentCtas.primaryHref}>{currentCtas.primary}</a>
+
+    <details class="ds-mobilemenu">
+      <summary aria-label="Open navigation"><span></span></summary>
+      <nav class="ds-mobilepanel" aria-label="Mobile navigation">
+        {links.map(([href, label]) => <a href={href}>{label}</a>)}
+        <a class="ds-mobilecta" href={currentCtas.primaryHref}>{currentCtas.primary}</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script is:inline>
+  document.querySelectorAll('.ds-mobilemenu').forEach((menu) => {
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => menu.removeAttribute('open')));
+  });
+</script>

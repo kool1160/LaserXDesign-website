@@ -6,6 +6,7 @@ import '../styles/polish.css';
 import '../styles/site-audit.css';
 import '../styles/generated-page-visuals.css';
 import '../styles/brand-logo.css';
+import '../styles/cinematic-motion.css';
 
 interface Props {
   title?: string;
@@ -14,31 +15,38 @@ interface Props {
 }
 
 const {
-  title = 'LaserX Design | Engineering Autonomous Manufacturing Systems',
-  description = 'LaserX Design engineers autonomous manufacturing systems, custom machines, controls, production fixtures, CNC cutting, and precision fabrication in Muskegon, Michigan.',
-  image = '/images/hero/laserx-home-hero.png',
+  title = 'LaserX Design Studio | From Idea to Cut-Ready Design',
+  description = 'LaserX Design Studio helps makers create, import, repair, physically preview, and export flat-cut signs and layered products for the machine software they already use.',
+  image = '/images/522FBBAC-647C-4C48-9538-0F84B36B2922.png',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, 'https://laserxdesign.com');
 const socialImage = new URL(image, 'https://laserxdesign.com');
-const isHome = Astro.url.pathname === '/';
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'LaserX Design',
-  url: 'https://laserxdesign.com',
-  image: socialImage.toString(),
-  description,
-  email: 'hello@laserxdesign.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Muskegon',
-    addressRegion: 'MI',
-    addressCountry: 'US',
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'LaserX Design Studio',
+    applicationCategory: 'DesignApplication',
+    operatingSystem: 'Windows',
+    url: 'https://laserxdesign.com',
+    image: socialImage.toString(),
+    description,
   },
-  areaServed: ['West Michigan', 'Michigan', 'United States'],
-  knowsAbout: ['Autonomous manufacturing systems', 'Machine design', 'Industrial automation', 'CAD engineering', 'Production fixtures', 'CNC plasma cutting', 'TIG welding', 'MIG welding', 'Controls integration'],
-};
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'LaserX Design',
+    url: 'https://laserxdesign.com',
+    email: 'hello@laserxdesign.com',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'LaserX Design Studio',
+    url: 'https://laserxdesign.com',
+  },
+];
 ---
 
 <!doctype html>
@@ -47,25 +55,25 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#071019" />
+    <meta name="theme-color" content="#070b10" />
     <meta name="color-scheme" content="dark" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:alt" content="LaserX Design autonomous manufacturing and fabrication systems" />
+    <meta property="og:image:alt" content="LaserX Design Studio" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    {isHome && <link rel="preload" as="image" href="/images/hero/laserx-home-hero.png" fetchpriority="high" />}
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <title>{title}</title>
   </head>
   <body>
     <slot />
+    <script src="/scripts/laserx-motion.js" defer></script>
   </body>
 </html>
