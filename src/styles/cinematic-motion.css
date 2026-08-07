@@ -1,106 +1,206 @@
-/* LaserX cinematic motion system — precision automation, not decorative noise. */
-.ds-home{--lx-motion:cubic-bezier(.16,1,.3,1);--lx-lock:cubic-bezier(.2,.9,.18,1);--lx-scroll:0;position:relative}
+/* LaserX cinematic system — product film, not dashboard chrome. */
+.ds-home{--lx-ease:cubic-bezier(.16,1,.3,1);--lx-fast:cubic-bezier(.2,.8,.2,1);--lx-accent:#38bdf8;position:relative;background:#050608}
 
-/* Signature machine-axis progress rail */
-.lx-axis{position:fixed;right:18px;top:50%;z-index:88;width:18px;height:220px;translate:0 -50%;pointer-events:none;opacity:.72}
-.lx-axis::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:1px;background:rgba(255,255,255,.13)}
-.lx-axis::after{content:"Y";position:absolute;left:0;top:-20px;color:rgba(255,255,255,.35);font:800 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em}
-.lx-axis-fill{position:absolute;left:7px;top:0;width:3px;height:100%;transform-origin:50% 0;transform:scaleY(var(--lx-scroll));background:linear-gradient(#dff7ff,#32b9ee 65%,#0879a8);box-shadow:0 0 18px rgba(56,189,248,.38)}
-.lx-axis-head{position:absolute;left:3px;top:calc((100% - 10px)*var(--lx-scroll));width:11px;height:11px;border:1px solid rgba(169,229,255,.9);background:#071018;box-shadow:0 0 16px rgba(56,189,248,.5);transition:top .08s linear}
-.lx-axis-mark{position:absolute;right:16px;bottom:-18px;color:rgba(255,255,255,.32);font:700 8px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;white-space:nowrap}
-
-/* First-frame product reveal */
-.motion-ready .ds-header{animation:lx-header-index .78s var(--lx-motion) both}
-.motion-ready .ds-hero-copy{animation:lx-hero-copy 1.05s .08s var(--lx-motion) both}
-.motion-ready .ds-product-visual{animation:lx-hero-machine 1.18s .18s var(--lx-motion) both}
-.motion-ready .ds-hero-grid{animation:lx-grid-power 1.25s .16s ease both}
-.motion-ready .ds-brand{position:relative}
-.motion-ready .ds-brand::after{content:"";position:absolute;inset:50% auto auto 44%;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 7px #fff,0 0 18px #68d8ff,0 0 42px #159bd5;opacity:0;animation:lx-brand-strike 1.7s .45s ease-out both;pointer-events:none}
-
-@keyframes lx-header-index{0%{translate:0 -110%;opacity:0}65%{translate:0 5px;opacity:1}100%{translate:0 0;opacity:1}}
-@keyframes lx-hero-copy{0%{translate:-13vw 24px;opacity:0;filter:blur(9px)}72%{translate:7px 0;opacity:1;filter:blur(0)}100%{translate:0 0;opacity:1;filter:blur(0)}}
-@keyframes lx-hero-machine{0%{translate:18vw 5vh;scale:.86;opacity:0;filter:blur(10px)}68%{translate:-10px 0;scale:1.01;opacity:1;filter:blur(0)}100%{translate:0 0;scale:1;opacity:1;filter:blur(0)}}
-@keyframes lx-grid-power{0%{opacity:0;transform:scale(1.08)}100%{opacity:.16;transform:scale(1)}}
-@keyframes lx-brand-strike{0%,28%{opacity:0;scale:.15}31%{opacity:1;scale:1.8}36%{opacity:.7;scale:.9}54%,100%{opacity:0;scale:4}}
-
-/* Precision hover language */
-.ds-navlinks a,.ds-navcta,.ds-button{position:relative;overflow:hidden}
-.ds-navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:#63d5ff;box-shadow:0 0 8px rgba(99,213,255,.55);transition:right .32s var(--lx-motion)}
+/* Header stays obvious, almost disappears into the film. */
+.ds-header{background:linear-gradient(180deg,rgba(4,6,8,.86),rgba(4,6,8,.28) 72%,transparent)!important;border-bottom:0!important;backdrop-filter:none!important}
+.ds-nav{min-height:84px!important}
+.ds-navlinks a{position:relative;color:rgba(255,255,255,.64)!important;transition:color .25s ease}
+.ds-navlinks a:hover,.ds-navlinks a.is-current{color:#fff!important}
+.ds-navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-10px;height:1px;background:#fff;transition:right .35s var(--lx-ease)}
 .ds-navlinks a:hover::after,.ds-navlinks a.is-current::after{right:0}
-.ds-navlinks a.is-current{color:#fff}
-.ds-navcta::before,.ds-button::before{content:"";position:absolute;inset:-2px auto -2px -30%;width:20%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);transform:skewX(-18deg);transition:left .52s var(--lx-motion);pointer-events:none}
-.ds-navcta:hover::before,.ds-button:hover::before{left:115%}
+.ds-navcta{background:transparent!important;border-color:rgba(255,255,255,.28)!important;color:#fff!important;transition:background .25s ease,color .25s ease,border-color .25s ease!important}
+.ds-navcta:hover{background:#fff!important;color:#050608!important;border-color:#fff!important}
 
-/* Every major section arrives like a workpiece being indexed into a cell. */
-.motion-ready main>section:not(.ds-hero){--lx-x:0px;--lx-y:90px;--lx-clip:10%;position:relative;opacity:0;translate:var(--lx-x) var(--lx-y);scale:.965;filter:blur(7px);clip-path:inset(0 var(--lx-clip) 0 var(--lx-clip));transition:opacity .78s ease,translate 1.05s var(--lx-lock),scale 1.05s var(--lx-lock),filter .68s ease,clip-path 1.05s var(--lx-lock)}
-.motion-ready main>section:not(.ds-hero).is-locked{opacity:1;translate:0 0;scale:1;filter:blur(0);clip-path:inset(0 0 0 0)}
-.motion-ready .ds-problem{--lx-x:-13vw;--lx-y:0;--lx-clip:7%}
-.motion-ready .ds-start{--lx-x:14vw;--lx-y:0;--lx-clip:8%}
-.motion-ready .ds-repair{--lx-x:-16vw;--lx-y:18px;--lx-clip:8%}
-.motion-ready .ds-three{--lx-x:0;--lx-y:18vh;--lx-clip:5%}
-.motion-ready .ds-workflows{--lx-x:15vw;--lx-y:0;--lx-clip:9%}
-.motion-ready .ds-ai{--lx-x:-12vw;--lx-y:0;--lx-clip:7%}
-.motion-ready .ds-origin{--lx-x:0;--lx-y:16vh;--lx-clip:6%}
-.motion-ready .ds-pricing{--lx-x:14vw;--lx-y:0;--lx-clip:8%}
-.motion-ready .ds-final{--lx-x:0;--lx-y:18vh;--lx-clip:12%}
+/* HERO — one giant statement and one giant object. */
+.ds-hero{min-height:132svh!important;padding:0!important;background:#050608!important;overflow:clip}
+.ds-hero-grid{opacity:.06!important;background-size:92px 92px!important;mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.7) 58%,transparent 94%)!important}
+.ds-hero-layout{position:sticky!important;top:0;min-height:100svh;display:grid!important;grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr)!important;align-items:center!important;gap:clamp(2rem,5vw,6rem)!important;padding-top:74px}
+.ds-hero-copy{position:relative;z-index:3;will-change:transform,opacity}
+.ds-statusline{opacity:.74}
+.ds-hero h1{max-width:8.5ch!important;font-size:clamp(4.5rem,8.3vw,9.4rem)!important;line-height:.86!important;letter-spacing:-.075em!important}
+.ds-hero h1 span{color:#fff!important;display:block}
+.ds-hero-lede{max-width:620px!important;margin-top:1.8rem!important;color:rgba(255,255,255,.68)!important;font-size:clamp(1.05rem,1.45vw,1.28rem)!important;line-height:1.65!important}
+.ds-proofline{margin-top:2.2rem!important;color:rgba(255,255,255,.42)!important}
+.ds-proofline span::before{color:rgba(255,255,255,.32)!important}
+.ds-actions{margin-top:2.2rem!important}
+.ds-button{border-radius:0!important;min-height:54px!important;transition:transform .28s var(--lx-ease),background .25s ease,color .25s ease!important}
+.ds-button:hover{transform:translateY(-2px)}
+.ds-button-primary{background:#fff!important;border-color:#fff!important;color:#07090b!important}
+.ds-button-secondary{background:transparent!important;border-color:rgba(255,255,255,.25)!important;color:#fff!important}
 
-/* Blue positioning rail fires as each station locks. */
-.motion-ready main>section:not(.ds-hero)::after{content:"";position:absolute;z-index:20;left:-18%;top:0;width:18%;height:1px;background:linear-gradient(90deg,transparent,#65d9ff 60%,#fff);box-shadow:0 0 18px rgba(56,189,248,.55);opacity:0;pointer-events:none}
-.motion-ready main>section:not(.ds-hero).is-locked::after{animation:lx-rail-index .72s .08s var(--lx-motion) both}
-@keyframes lx-rail-index{0%{left:-18%;width:18%;opacity:0}15%{opacity:1}70%{left:78%;width:26%;opacity:1}100%{left:108%;width:12%;opacity:0}}
+/* Kill the app-card impression. Make the conceptual object float like a product film. */
+.ds-product-visual{border:0!important;background:transparent!important;box-shadow:none!important;transform:none!important;overflow:visible!important;will-change:transform,opacity}
+.ds-instrument-top{border:0!important;background:transparent!important;padding-inline:0!important}
+.ds-instrument-top>div b{font-size:.72rem!important;letter-spacing:.16em!important}
+.ds-instrument-top>div span,.ds-instrument-top small{opacity:.42!important}
+.ds-instrument-body{position:relative;min-height:610px!important;border:0!important;background:transparent!important;overflow:visible!important}
+.ds-ruler{opacity:.22!important}
+.ds-geometry-stage{inset:4.2rem 0 4.4rem 0!important;border:0!important;background:radial-gradient(circle at 52% 47%,rgba(56,189,248,.13),transparent 31%)!important}
+.ds-geometry-stage::before{opacity:.08!important}
+.ds-layer-stack{width:76%!important;filter:drop-shadow(0 34px 44px rgba(0,0,0,.45)) drop-shadow(0 0 50px rgba(56,189,248,.08))}
+.ds-plate{border-color:rgba(255,255,255,.2)!important}
+.ds-plate-back{background:#171b1f!important}
+.ds-plate-mid{background:#0d79a8!important}
+.ds-plate-face{background:#eef2f4!important;color:#07090b!important}
+.ds-dimension{opacity:.45!important}
+.ds-crosshair{opacity:.32!important}
+.ds-workflow-track{left:0!important;right:0!important;bottom:0!important;border:0!important;background:transparent!important}
+.ds-workflow-track span{border-top:1px solid rgba(255,255,255,.1)!important;background:transparent!important}
+.ds-workflow-track span.active{border-top-color:#fff!important;background:transparent!important;color:#fff!important}
+.ds-instrument-bottom{border:0!important;padding-inline:0!important;background:transparent!important;color:rgba(255,255,255,.35)!important}
+.ds-visual-note{display:none!important}
 
-/* Section choreography — important content arrives after the workpiece locks. */
-.motion-ready .ds-path-card{translate:0 44px;opacity:.2;transition:translate .78s var(--lx-motion),opacity .6s ease,background .25s ease,border-color .25s ease}
-.motion-ready .ds-start.is-locked .ds-path-card{translate:0 0;opacity:1}
-.motion-ready .ds-start.is-locked .ds-path-card:nth-child(2){transition-delay:.08s}
-.motion-ready .ds-start.is-locked .ds-path-card:nth-child(3){transition-delay:.16s}
-.motion-ready .ds-repair-metrics>div{translate:0 48px;opacity:0;transition:translate .72s var(--lx-motion),opacity .55s ease}
-.motion-ready .ds-repair.is-locked .ds-repair-metrics>div{translate:0 0;opacity:1}
-.motion-ready .ds-repair.is-locked .ds-repair-metrics>div:nth-child(2){transition-delay:.12s}
-.motion-ready .ds-repair.is-locked .ds-repair-metrics>div:nth-child(3){transition-delay:.24s}
-.motion-ready .ds-repair-bar i{transform-origin:0 50%;transform:scaleX(0);transition:transform 1s .48s var(--lx-motion)}
-.motion-ready .ds-repair.is-locked .ds-repair-bar i{transform:scaleX(1)}
+/* Every chapter is a scene, not a stacked card section. */
+.ds-problem,.ds-start,.ds-repair,.ds-three,.ds-workflows,.ds-ai,.ds-origin,.ds-pricing,.ds-final{min-height:100svh;display:grid;align-items:center;padding-block:clamp(7rem,10vw,10rem)!important;overflow:clip}
+.ds-problem{background:#f3f3f1!important;color:#090b0d!important}
+.ds-start{background:#050608!important}
+.ds-repair{background:#0a0d10!important}
+.ds-three{background:#f3f3f1!important;color:#090b0d!important}
+.ds-workflows{background:#050608!important}
+.ds-ai{background:#f3f3f1!important;color:#090b0d!important}
+.ds-origin{background:#050608!important}
+.ds-pricing{background:#0b0e11!important}
+.ds-final{background:#f3f3f1!important;color:#090b0d!important;text-align:center}
 
-/* The 3D moment should feel like a mechanical reveal. Independent translate preserves the existing 3D transforms. */
-.motion-ready .ds-three:not(.is-locked) .ds-3dplate-1{translate:-15vw 9vh;opacity:.2}
-.motion-ready .ds-three:not(.is-locked) .ds-3dplate-2{translate:0 16vh;opacity:.25}
-.motion-ready .ds-three:not(.is-locked) .ds-3dplate-3{translate:15vw 7vh;opacity:.2}
-.motion-ready .ds-3dplate{transition:translate 1.15s var(--lx-lock),opacity .6s ease}
-.motion-ready .ds-three.is-locked .ds-3dplate{translate:0 0;opacity:1}
-.motion-ready .ds-three.is-locked .ds-3dplate-2{transition-delay:.1s}
-.motion-ready .ds-three.is-locked .ds-3dplate-3{transition-delay:.2s}
+.ds-problem h2,.ds-section-head h2,.ds-repair h2,.ds-three h2,.ds-ai h2,.ds-origin h2,.ds-pricing h2,.ds-final h2{font-size:clamp(4rem,7.3vw,8.3rem)!important;line-height:.88!important;letter-spacing:-.07em!important}
+.ds-problem h2 span,.ds-section-head h2 span,.ds-repair h2 span,.ds-three h2 span,.ds-ai h2 span,.ds-origin h2 span,.ds-pricing h2 span,.ds-final h2 span{color:inherit!important}
+.ds-eyebrow{letter-spacing:.2em!important;font-size:.62rem!important}
+.ds-problem .ds-eyebrow,.ds-three .ds-eyebrow,.ds-ai .ds-eyebrow{color:#59636a!important}
 
-.motion-ready .ds-flowbox{translate:70px 0;opacity:0;transition:translate .72s var(--lx-motion),opacity .5s ease}
-.motion-ready .ds-workflows.is-locked .ds-flowbox{translate:0 0;opacity:1}
-.motion-ready .ds-workflows.is-locked .ds-flowbox:nth-of-type(2){transition-delay:.12s}
-.motion-ready .ds-workflows.is-locked .ds-flowbox:nth-of-type(3){transition-delay:.24s}
-.motion-ready .ds-workflows.is-locked .ds-flowbox:nth-of-type(4){transition-delay:.36s}
-.motion-ready .ds-origin-gallery figure{translate:0 70px;opacity:0;transition:translate .86s var(--lx-motion),opacity .58s ease}
-.motion-ready .ds-origin.is-locked .ds-origin-gallery figure{translate:0 0;opacity:1}
-.motion-ready .ds-origin.is-locked .ds-origin-gallery figure:nth-child(2){transition-delay:.1s}
-.motion-ready .ds-origin.is-locked .ds-origin-gallery figure:nth-child(3){transition-delay:.2s}
+/* Problem scene: black/white editorial, huge negative space. */
+.ds-problem-grid{grid-template-columns:1.22fr .78fr!important;gap:clamp(4rem,9vw,11rem)!important;align-items:end!important}
+.ds-problem-copy{max-width:520px;padding-bottom:.8rem}
+.ds-problem-copy p{font-size:clamp(1.05rem,1.5vw,1.3rem)!important;color:#4c5358!important}
+.ds-before-after{margin-top:6rem!important;border-top:1px solid rgba(0,0,0,.16);padding-top:1.6rem}
+.ds-before-after-label strong{font-size:clamp(1.1rem,1.6vw,1.45rem)!important}
 
-/* Machine-driven navigation transition: shutters, guide rail, then target locks into view. */
-.lx-machine-nav{position:fixed;inset:0;z-index:9999;pointer-events:none;visibility:hidden}
-.lx-machine-nav.is-active,.lx-machine-nav.is-releasing{visibility:visible}
-.lx-machine-shutter{position:absolute;left:0;width:100%;height:50.5%;background:linear-gradient(90deg,#06090d,#0b1117 48%,#070b10);transition:transform .38s cubic-bezier(.65,0,.35,1)}
-.lx-machine-shutter.top{top:0;transform:translateY(-102%)}
-.lx-machine-shutter.bottom{bottom:0;transform:translateY(102%)}
-.lx-machine-nav.is-active .lx-machine-shutter.top,.lx-machine-nav.is-active .lx-machine-shutter.bottom{transform:translateY(0)}
-.lx-machine-nav.is-releasing .lx-machine-shutter.top{transform:translateY(-102%)}
-.lx-machine-nav.is-releasing .lx-machine-shutter.bottom{transform:translateY(102%)}
-.lx-machine-guide{position:absolute;z-index:2;left:-20%;top:50%;width:20%;height:1px;background:linear-gradient(90deg,transparent,#49c8fa,#fff);box-shadow:0 0 28px rgba(56,189,248,.65);opacity:0}
-.lx-machine-nav.is-active .lx-machine-guide{animation:lx-guide-cross .5s .2s var(--lx-motion) both}
-@keyframes lx-guide-cross{0%{left:-20%;opacity:0}12%{opacity:1}78%{left:100%;opacity:1}100%{left:120%;opacity:0}}
-.lx-machine-target{position:absolute;z-index:3;left:50%;top:50%;translate:-50% -50%;display:grid;gap:7px;text-align:center;opacity:0}
-.lx-machine-target small{color:#6b7a85;font:800 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;text-transform:uppercase}
-.lx-machine-target strong{color:#edf7fb;font:850 clamp(1.4rem,3vw,2.7rem)/1.05 system-ui,sans-serif;letter-spacing:-.035em;text-transform:uppercase}
-.lx-machine-nav.is-active .lx-machine-target{animation:lx-target-lock .48s .18s var(--lx-motion) both}
-@keyframes lx-target-lock{0%{opacity:0;translate:-50% calc(-50% + 46px);scale:.92}75%{opacity:1;translate:-50% calc(-50% - 4px);scale:1.01}100%{opacity:1;translate:-50% -50%;scale:1}}
-html.lx-nav-transitioning{scroll-behavior:auto!important}
-html.lx-nav-transitioning .ds-home{overflow:hidden}
+/* Starting paths: three giant editorial columns, no card-wall feeling. */
+.ds-start .ds-section-head{max-width:1100px!important;margin-bottom:5rem!important}
+.ds-path-grid{border:0!important;border-top:1px solid rgba(255,255,255,.18)!important}
+.ds-path-card{min-height:440px!important;background:transparent!important;border:0!important;border-right:1px solid rgba(255,255,255,.13)!important;padding:2rem 2rem 2rem 0!important}
+.ds-path-card+ .ds-path-card{padding-left:2rem!important}
+.ds-path-card:last-child{border-right:0!important}
+.ds-path-icon{margin-top:6rem!important;font-size:2.4rem!important;color:#fff!important}
+.ds-path-card h3{font-size:clamp(1.7rem,2.5vw,2.5rem)!important;letter-spacing:-.04em}
+.ds-path-card p{max-width:340px!important;color:rgba(255,255,255,.55)!important}
+.ds-path-top,.ds-cardnum{color:rgba(255,255,255,.45)!important}
 
-@media(max-width:900px){.lx-axis{display:none}.motion-ready main>section:not(.ds-hero){--lx-x:0!important;--lx-y:72px!important;--lx-clip:4%!important}.motion-ready .ds-three:not(.is-locked) .ds-3dplate-1{translate:-26vw 8vh}.motion-ready .ds-three:not(.is-locked) .ds-3dplate-3{translate:26vw 8vh}}
-@media(max-width:620px){.motion-ready .ds-hero-copy{animation-duration:.82s}.motion-ready .ds-product-visual{animation-duration:.9s}.lx-machine-target strong{font-size:1.35rem}.motion-ready main>section:not(.ds-hero){--lx-y:54px!important}}
+/* Repair scene: huge single instrument, not a dashboard widget. */
+.ds-repair-grid{grid-template-columns:.84fr 1.16fr!important;gap:clamp(4rem,9vw,11rem)!important}
+.ds-repair-copy>p:not(.ds-eyebrow){max-width:550px;color:rgba(255,255,255,.56)!important;font-size:1.12rem!important}
+.ds-repair-panel{min-height:480px!important;border:0!important;border-top:1px solid rgba(255,255,255,.18)!important;border-bottom:1px solid rgba(255,255,255,.18)!important;background:transparent!important}
+.ds-repair-caption{padding-inline:0!important}
+.ds-repair-metrics{min-height:320px}
+.ds-repair-metrics>div{background:transparent!important;border-color:rgba(255,255,255,.12)!important}
+.ds-repair-metrics strong{font-size:clamp(4rem,7vw,7.7rem)!important;color:#fff!important}
+.ds-repair-action b{font-size:clamp(1.15rem,2vw,1.7rem)!important;background:#fff!important;color:#080a0c!important}
+.ds-repair-bar{background:transparent!important;border-top:1px solid rgba(255,255,255,.11)!important}
 
-@media(prefers-reduced-motion:reduce){.motion-ready .ds-header,.motion-ready .ds-hero-copy,.motion-ready .ds-product-visual,.motion-ready .ds-hero-grid,.motion-ready .ds-brand::after{animation:none!important}.motion-ready main>section:not(.ds-hero),.motion-ready .ds-path-card,.motion-ready .ds-repair-metrics>div,.motion-ready .ds-3dplate,.motion-ready .ds-flowbox,.motion-ready .ds-origin-gallery figure{opacity:1!important;translate:0 0!important;scale:1!important;filter:none!important;clip-path:none!important;transition:none!important}.motion-ready main>section::after,.lx-machine-nav,.lx-axis{display:none!important}}
+/* 3D is the signature reveal: visual owns most of the screen. */
+.ds-three-grid{grid-template-columns:1.22fr .78fr!important;gap:clamp(4rem,8vw,9rem)!important}
+.ds-three-visual{min-height:690px!important;border:0!important;background:radial-gradient(circle at 50% 48%,rgba(0,145,210,.13),transparent 30%)!important}
+.ds-three-visual::before{opacity:.3!important}
+.ds-exploded-sign{width:80%!important;filter:drop-shadow(0 42px 38px rgba(0,0,0,.18))}
+.ds-three-copy p{font-size:1.12rem!important;color:#4d565d!important}
+.ds-three-truth{border-left:1px solid rgba(0,0,0,.18)!important;color:#596168!important}
+.ds-feature-list span{border-color:rgba(0,0,0,.14)!important;color:#22282d!important}
+
+/* Companion flow: almost poster-like. */
+.ds-workflows .ds-section-head{max-width:1000px!important;margin-inline:auto;text-align:center;margin-bottom:6rem!important}
+.ds-flow{gap:0!important;border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);padding-block:0!important}
+.ds-flowbox{min-height:230px!important;border:0!important;border-right:1px solid rgba(255,255,255,.12)!important;background:transparent!important;padding:2rem!important}
+.ds-flowbox:last-of-type{border-right:0!important}
+.ds-flowbox.core{background:#fff!important;color:#07090b!important}
+.ds-flow>i{display:none!important}
+.ds-companion-line{font-size:clamp(1.8rem,3.5vw,3.6rem)!important;letter-spacing:-.05em!important;margin-top:5rem!important}
+
+/* Origin media becomes cinematic photography rather than a gallery grid. */
+.ds-origin-head{grid-template-columns:1.2fr .8fr!important;margin-bottom:5rem!important}
+.ds-origin-gallery{grid-template-columns:1.5fr .75fr .75fr!important;gap:1px!important;background:rgba(255,255,255,.12)}
+.ds-origin-gallery figure{min-height:520px!important;border:0!important;background:#050608!important;overflow:hidden}
+.ds-origin-gallery figure img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.07);transition:filter .6s ease,transform 1.2s var(--lx-ease)}
+.ds-origin-gallery figure:hover img{filter:saturate(1) contrast(1.02);transform:scale(1.025)}
+.ds-origin-gallery figcaption{background:linear-gradient(transparent,rgba(0,0,0,.82))!important;border:0!important}
+
+/* Cinematic scene entrance — large travel, soft settle, no gimmick overlays. */
+.motion-ready main>section:not(.ds-hero){opacity:0;transform:translate3d(0,88px,0) scale(.975);filter:blur(8px);transition:opacity .75s ease,transform 1.15s var(--lx-ease),filter .75s ease}
+.motion-ready main>section:not(.ds-hero).is-revealed{opacity:1;transform:none;filter:none}
+.motion-ready .ds-problem{transform:translate3d(-9vw,0,0) scale(.985)}
+.motion-ready .ds-start{transform:translate3d(9vw,0,0) scale(.985)}
+.motion-ready .ds-repair{transform:translate3d(-10vw,0,0) scale(.985)}
+.motion-ready .ds-three{transform:translate3d(0,13vh,0) scale(.97)}
+.motion-ready .ds-workflows{transform:translate3d(8vw,0,0) scale(.985)}
+.motion-ready .ds-ai{transform:translate3d(-8vw,0,0) scale(.985)}
+.motion-ready .ds-origin{transform:translate3d(0,12vh,0) scale(.98)}
+.motion-ready .ds-pricing{transform:translate3d(8vw,0,0) scale(.985)}
+.motion-ready .ds-final{transform:translate3d(0,12vh,0) scale(.98)}
+.motion-ready main>section.is-revealed{transform:none!important}
+
+/* Hero ignition. */
+.motion-ready .ds-header{animation:lx-head .72s var(--lx-ease) both}
+.motion-ready .ds-hero-copy{animation:lx-copy 1.05s .05s var(--lx-ease) both}
+.motion-ready .ds-product-visual{animation:lx-object 1.2s .14s var(--lx-ease) both}
+@keyframes lx-head{from{opacity:0;transform:translateY(-26px)}to{opacity:1;transform:none}}
+@keyframes lx-copy{from{opacity:0;transform:translate3d(-90px,28px,0);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes lx-object{from{opacity:0;transform:translate3d(12vw,4vh,0) scale(.88);filter:blur(12px)}70%{opacity:1;transform:translate3d(-8px,0,0) scale(1.01);filter:none}to{opacity:1;transform:none;filter:none}}
+
+/* Nav click: a single index line and label, not a blocking sci-fi shutter. */
+.lx-index-jump{position:fixed;inset:0;z-index:9999;pointer-events:none;visibility:hidden}
+.lx-index-jump.is-active{visibility:visible}
+.lx-index-jump::before{content:"";position:absolute;left:-35%;top:50%;width:35%;height:2px;background:linear-gradient(90deg,transparent,#fff 68%,var(--lx-accent));box-shadow:0 0 22px rgba(56,189,248,.4);animation:lx-index-line .56s var(--lx-fast) both}
+.lx-index-label{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#fff;text-align:center;opacity:0;animation:lx-index-label .58s .08s var(--lx-ease) both}
+.lx-index-label small{display:block;margin-bottom:.6rem;color:rgba(255,255,255,.42);font:800 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.22em;text-transform:uppercase}
+.lx-index-label strong{font:650 clamp(1.8rem,4vw,4.4rem)/.95 system-ui,sans-serif;letter-spacing:-.055em;text-transform:uppercase}
+@keyframes lx-index-line{0%{left:-35%;width:35%;opacity:0}12%{opacity:1}72%{left:78%;width:34%;opacity:1}100%{left:110%;width:16%;opacity:0}}
+@keyframes lx-index-label{0%{opacity:0;transform:translate(-50%,calc(-50% + 32px));filter:blur(8px)}58%{opacity:1;transform:translate(-50%,calc(-50% - 3px));filter:none}100%{opacity:0;transform:translate(-50%,calc(-50% - 16px));filter:none}}
+
+/* Scene detail choreography */
+.motion-ready .ds-path-card,.motion-ready .ds-repair-metrics>div,.motion-ready .ds-flowbox,.motion-ready .ds-origin-gallery figure{opacity:0;transform:translateY(54px);transition:opacity .62s ease,transform .9s var(--lx-ease)}
+.motion-ready .ds-start.is-revealed .ds-path-card,.motion-ready .ds-repair.is-revealed .ds-repair-metrics>div,.motion-ready .ds-workflows.is-revealed .ds-flowbox,.motion-ready .ds-origin.is-revealed .ds-origin-gallery figure{opacity:1;transform:none}
+.motion-ready .ds-start.is-revealed .ds-path-card:nth-child(2),.motion-ready .ds-repair.is-revealed .ds-repair-metrics>div:nth-child(2),.motion-ready .ds-workflows.is-revealed .ds-flowbox:nth-of-type(2),.motion-ready .ds-origin.is-revealed .ds-origin-gallery figure:nth-child(2){transition-delay:.12s}
+.motion-ready .ds-start.is-revealed .ds-path-card:nth-child(3),.motion-ready .ds-repair.is-revealed .ds-repair-metrics>div:nth-child(3),.motion-ready .ds-workflows.is-revealed .ds-flowbox:nth-of-type(3),.motion-ready .ds-origin.is-revealed .ds-origin-gallery figure:nth-child(3){transition-delay:.24s}
+.motion-ready .ds-workflows.is-revealed .ds-flowbox:nth-of-type(4){transition-delay:.36s}
+
+/* 3D layer reveal keeps the machine DNA but feels photographic/cinematic. */
+.motion-ready .ds-three:not(.is-revealed) .ds-3dplate-1{translate:-17vw 10vh;opacity:.08}
+.motion-ready .ds-three:not(.is-revealed) .ds-3dplate-2{translate:0 19vh;opacity:.12}
+.motion-ready .ds-three:not(.is-revealed) .ds-3dplate-3{translate:17vw 8vh;opacity:.08}
+.motion-ready .ds-3dplate{transition:translate 1.25s var(--lx-ease),opacity .7s ease}
+.motion-ready .ds-three.is-revealed .ds-3dplate{translate:0 0;opacity:1}
+.motion-ready .ds-three.is-revealed .ds-3dplate-2{transition-delay:.1s}
+.motion-ready .ds-three.is-revealed .ds-3dplate-3{transition-delay:.2s}
+
+@media(max-width:980px){
+  .ds-hero{min-height:auto!important;padding:8rem 0 5rem!important}
+  .ds-hero-layout{position:relative!important;min-height:auto!important;grid-template-columns:1fr!important;padding-top:0}
+  .ds-hero h1{max-width:10ch!important;font-size:clamp(4.1rem,12vw,7.4rem)!important}
+  .ds-instrument-body{min-height:520px!important}
+  .ds-problem-grid,.ds-repair-grid,.ds-three-grid,.ds-origin-head{grid-template-columns:1fr!important}
+  .ds-path-grid{grid-template-columns:1fr!important;border-top:0!important}
+  .ds-path-card,.ds-path-card+ .ds-path-card{padding:2rem 0!important;border-right:0!important;border-top:1px solid rgba(255,255,255,.15)!important;min-height:320px!important}
+  .ds-path-icon{margin-top:3.5rem!important}
+  .ds-flow{display:grid!important;grid-template-columns:1fr!important}
+  .ds-flowbox{border-right:0!important;border-bottom:1px solid rgba(255,255,255,.12)!important;min-height:170px!important}
+  .ds-origin-gallery{grid-template-columns:1fr!important}
+  .ds-origin-gallery figure{min-height:430px!important}
+}
+
+@media(max-width:620px){
+  .ds-nav{min-height:72px!important}
+  .ds-hero{padding-top:7rem!important}
+  .ds-hero h1{font-size:clamp(3.65rem,16.4vw,5.7rem)!important}
+  .ds-hero-lede{font-size:1rem!important}
+  .ds-product-visual{margin-top:1rem}
+  .ds-instrument-body{min-height:430px!important}
+  .ds-layer-stack{width:86%!important}
+  .ds-problem,.ds-start,.ds-repair,.ds-three,.ds-workflows,.ds-ai,.ds-origin,.ds-pricing,.ds-final{min-height:auto;padding-block:6rem!important}
+  .ds-problem h2,.ds-section-head h2,.ds-repair h2,.ds-three h2,.ds-ai h2,.ds-origin h2,.ds-pricing h2,.ds-final h2{font-size:clamp(3.3rem,14vw,5.3rem)!important}
+  .ds-three-visual{min-height:470px!important}
+  .ds-repair-panel{min-height:auto!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .motion-ready .ds-header,.motion-ready .ds-hero-copy,.motion-ready .ds-product-visual{animation:none!important}
+  .motion-ready main>section,.motion-ready .ds-path-card,.motion-ready .ds-repair-metrics>div,.motion-ready .ds-flowbox,.motion-ready .ds-origin-gallery figure,.motion-ready .ds-3dplate{opacity:1!important;transform:none!important;translate:0 0!important;filter:none!important;transition:none!important}
+  .lx-index-jump{display:none!important}
+}
